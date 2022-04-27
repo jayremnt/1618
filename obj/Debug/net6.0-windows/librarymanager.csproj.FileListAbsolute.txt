@@ -1,0 +1,17 @@
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\bin\Debug\net6.0-windows\librarymanager.exe
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\bin\Debug\net6.0-windows\librarymanager.deps.json
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\bin\Debug\net6.0-windows\librarymanager.runtimeconfig.json
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\bin\Debug\net6.0-windows\librarymanager.dll
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\bin\Debug\net6.0-windows\librarymanager.pdb
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.csproj.AssemblyReference.cache
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.LibraryManager.resources
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.csproj.GenerateResource.cache
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.AssemblyInfoInputs.cache
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.AssemblyInfo.cs
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.csproj.CoreCompileInputs.cache
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.dll
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\refint\librarymanager.dll
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.pdb
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\librarymanager.genruntimeconfig.cache
+C:\Users\jayre\Repo\greenwich\1618\librarymanager\obj\Debug\net6.0-windows\ref\librarymanager.dll
