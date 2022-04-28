@@ -50,9 +50,6 @@ namespace librarymanager {
     }
 
     private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-      labelUpdateBookStatus.Text = e.RowIndex.ToString();
-      labelUpdateBookStatus.Visible = true;
-      labelUpdateBookStatus.ForeColor = Color.Blue;
       if (e.RowIndex >= 0) {
         DataGridViewRow row = this.dataGridViewBooks.Rows[e.RowIndex];
         textBoxAllBookIndex.Text = row.Cells["Index"].Value.ToString();
@@ -116,15 +113,15 @@ namespace librarymanager {
           labelAddMemberStatus.ForeColor = Color.Red;
         }
         else if (new Book().IsBooksCheckedOut(books, booksLength, checkedOutBooks)) {
-          labelAddBookStatus.Text = "* Successfully added new member!";
-          labelAddMemberStatus.Visible = true;
-          labelAddMemberStatus.ForeColor = Color.Blue;
-          members[membersLength] = new Member(++membersLength, name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks);
-        }
-        else {
           labelAddMemberStatus.Text = "* Some books were checked out.";
           labelAddMemberStatus.Visible = true;
           labelAddMemberStatus.ForeColor = Color.Red;
+        }
+        else {
+          labelAddMemberStatus.Text = "* Successfully added new member!";
+          labelAddMemberStatus.Visible = true;
+          labelAddMemberStatus.ForeColor = Color.Blue;
+          members[membersLength] = new Member(++membersLength, name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks);
         }
       }
     }
