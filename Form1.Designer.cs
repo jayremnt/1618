@@ -32,10 +32,7 @@
       this.findBookPage = new System.Windows.Forms.TabPage();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-      this.btnFindBookByPublicationDate = new System.Windows.Forms.Button();
-      this.btnFindBookByCategory = new System.Windows.Forms.Button();
-      this.btnFindBookByAuthor = new System.Windows.Forms.Button();
-      this.btnFindBookByTitle = new System.Windows.Forms.Button();
+      this.btnFindBooks = new System.Windows.Forms.Button();
       this.label4 = new System.Windows.Forms.Label();
       this.textBoxFindBooksByPublicationDate = new System.Windows.Forms.TextBox();
       this.label3 = new System.Windows.Forms.Label();
@@ -55,78 +52,51 @@
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
+      this.btnAddBook = new System.Windows.Forms.Button();
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.label27 = new System.Windows.Forms.Label();
-      this.labelUpdateBookStatus = new System.Windows.Forms.Label();
-      this.textBoxAllBookIndex = new System.Windows.Forms.TextBox();
+      this.labelHandleBookStatus = new System.Windows.Forms.Label();
+      this.textBoxBookIndex = new System.Windows.Forms.TextBox();
       this.label25 = new System.Windows.Forms.Label();
       this.btnDeleteBook = new System.Windows.Forms.Button();
       this.btnUpdateBook = new System.Windows.Forms.Button();
-      this.textBoxAllBookCode = new System.Windows.Forms.TextBox();
+      this.textBoxBookCode = new System.Windows.Forms.TextBox();
       this.label12 = new System.Windows.Forms.Label();
-      this.textBoxAllBookCategory = new System.Windows.Forms.TextBox();
+      this.textBoxBookCategory = new System.Windows.Forms.TextBox();
       this.label13 = new System.Windows.Forms.Label();
-      this.textBoxAllBookPublicationDate = new System.Windows.Forms.TextBox();
+      this.textBoxBookPublicationDate = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
-      this.textBoxAllBookAuthor = new System.Windows.Forms.TextBox();
+      this.textBoxBookAuthor = new System.Windows.Forms.TextBox();
       this.label15 = new System.Windows.Forms.Label();
-      this.textBoxAllBookTitle = new System.Windows.Forms.TextBox();
+      this.textBoxBookTitle = new System.Windows.Forms.TextBox();
       this.label16 = new System.Windows.Forms.Label();
       this.label11 = new System.Windows.Forms.Label();
-      this.tabPage4 = new System.Windows.Forms.TabPage();
-      this.labelAddBookStatus = new System.Windows.Forms.Label();
-      this.btnAddBook = new System.Windows.Forms.Button();
-      this.textBoxAddBookCode = new System.Windows.Forms.TextBox();
-      this.label10 = new System.Windows.Forms.Label();
-      this.textBoxAddBookCategory = new System.Windows.Forms.TextBox();
-      this.label9 = new System.Windows.Forms.Label();
-      this.textBoxAddBookPublicationDate = new System.Windows.Forms.TextBox();
-      this.label8 = new System.Windows.Forms.Label();
-      this.textBoxAddBookAuthor = new System.Windows.Forms.TextBox();
-      this.label7 = new System.Windows.Forms.Label();
-      this.textBoxAddBookTitle = new System.Windows.Forms.TextBox();
-      this.label6 = new System.Windows.Forms.Label();
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.tabControl4 = new System.Windows.Forms.TabControl();
       this.tabPage5 = new System.Windows.Forms.TabPage();
       this.splitContainer3 = new System.Windows.Forms.SplitContainer();
       this.dataGridViewMembers = new System.Windows.Forms.DataGridView();
-      this.textBoxAllMemberIndex = new System.Windows.Forms.TextBox();
+      this.labelHandleMemberStatus = new System.Windows.Forms.Label();
+      this.btnAddMember = new System.Windows.Forms.Button();
+      this.textBoxMemberIndex = new System.Windows.Forms.TextBox();
       this.label26 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberCheckedOutBooks = new System.Windows.Forms.TextBox();
+      this.textBoxMemberCheckedOutBooks = new System.Windows.Forms.TextBox();
       this.label24 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberDateOfBirth = new System.Windows.Forms.TextBox();
+      this.textBoxMemberDateOfBirth = new System.Windows.Forms.TextBox();
       this.label23 = new System.Windows.Forms.Label();
       this.btnDeleteMember = new System.Windows.Forms.Button();
       this.btnUpdateMember = new System.Windows.Forms.Button();
-      this.textBoxAllMemberEmail = new System.Windows.Forms.TextBox();
+      this.textBoxMemberEmail = new System.Windows.Forms.TextBox();
       this.label17 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberPhoneNumber = new System.Windows.Forms.TextBox();
+      this.textBoxMemberPhoneNumber = new System.Windows.Forms.TextBox();
       this.label18 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberClassName = new System.Windows.Forms.TextBox();
+      this.textBoxMemberClassName = new System.Windows.Forms.TextBox();
       this.label19 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberStudentID = new System.Windows.Forms.TextBox();
+      this.textBoxMemberStudentID = new System.Windows.Forms.TextBox();
       this.label20 = new System.Windows.Forms.Label();
-      this.textBoxAllMemberInfo = new System.Windows.Forms.TextBox();
+      this.textBoxMemberName = new System.Windows.Forms.TextBox();
       this.label21 = new System.Windows.Forms.Label();
       this.label22 = new System.Windows.Forms.Label();
-      this.tabPage6 = new System.Windows.Forms.TabPage();
-      this.labelAddMemberStatus = new System.Windows.Forms.Label();
-      this.textBoxAddMemberCheckedOutBooks = new System.Windows.Forms.TextBox();
-      this.textBoxAddMemberEmail = new System.Windows.Forms.TextBox();
-      this.label30 = new System.Windows.Forms.Label();
-      this.btnAddMember = new System.Windows.Forms.Button();
-      this.label31 = new System.Windows.Forms.Label();
-      this.textBoxAddMemberPhoneNumber = new System.Windows.Forms.TextBox();
-      this.label32 = new System.Windows.Forms.Label();
-      this.textBoxAddMemberClassName = new System.Windows.Forms.TextBox();
-      this.label33 = new System.Windows.Forms.Label();
-      this.label34 = new System.Windows.Forms.Label();
-      this.textBoxAddMemberStudentID = new System.Windows.Forms.TextBox();
-      this.label35 = new System.Windows.Forms.Label();
-      this.textBoxAddMemberDateOfBirth = new System.Windows.Forms.TextBox();
-      this.label36 = new System.Windows.Forms.Label();
-      this.textBoxAddMemberName = new System.Windows.Forms.TextBox();
       this.OptionPage = new System.Windows.Forms.TabPage();
       this.tabControl1.SuspendLayout();
       this.findBookPage.SuspendLayout();
@@ -147,7 +117,6 @@
       this.splitContainer2.Panel2.SuspendLayout();
       this.splitContainer2.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).BeginInit();
-      this.tabPage4.SuspendLayout();
       this.tabPage2.SuspendLayout();
       this.tabControl4.SuspendLayout();
       this.tabPage5.SuspendLayout();
@@ -156,7 +125,6 @@
       this.splitContainer3.Panel2.SuspendLayout();
       this.splitContainer3.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembers)).BeginInit();
-      this.tabPage6.SuspendLayout();
       this.SuspendLayout();
       // 
       // tabControl1
@@ -200,10 +168,7 @@
       // 
       // splitContainer1.Panel1
       // 
-      this.splitContainer1.Panel1.Controls.Add(this.btnFindBookByPublicationDate);
-      this.splitContainer1.Panel1.Controls.Add(this.btnFindBookByCategory);
-      this.splitContainer1.Panel1.Controls.Add(this.btnFindBookByAuthor);
-      this.splitContainer1.Panel1.Controls.Add(this.btnFindBookByTitle);
+      this.splitContainer1.Panel1.Controls.Add(this.btnFindBooks);
       this.splitContainer1.Panel1.Controls.Add(this.label4);
       this.splitContainer1.Panel1.Controls.Add(this.textBoxFindBooksByPublicationDate);
       this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -221,45 +186,15 @@
       this.splitContainer1.SplitterDistance = 449;
       this.splitContainer1.TabIndex = 0;
       // 
-      // btnFindBookByPublicationDate
+      // btnFindBooks
       // 
-      this.btnFindBookByPublicationDate.Location = new System.Drawing.Point(349, 110);
-      this.btnFindBookByPublicationDate.Name = "btnFindBookByPublicationDate";
-      this.btnFindBookByPublicationDate.Size = new System.Drawing.Size(75, 23);
-      this.btnFindBookByPublicationDate.TabIndex = 11;
-      this.btnFindBookByPublicationDate.Text = "Search";
-      this.btnFindBookByPublicationDate.UseVisualStyleBackColor = true;
-      this.btnFindBookByPublicationDate.Click += new System.EventHandler(this.btnFindBookByPublicationDate_Click);
-      // 
-      // btnFindBookByCategory
-      // 
-      this.btnFindBookByCategory.Location = new System.Drawing.Point(349, 81);
-      this.btnFindBookByCategory.Name = "btnFindBookByCategory";
-      this.btnFindBookByCategory.Size = new System.Drawing.Size(75, 23);
-      this.btnFindBookByCategory.TabIndex = 10;
-      this.btnFindBookByCategory.Text = "Search";
-      this.btnFindBookByCategory.UseVisualStyleBackColor = true;
-      this.btnFindBookByCategory.Click += new System.EventHandler(this.btnFindBookByCategory_Click);
-      // 
-      // btnFindBookByAuthor
-      // 
-      this.btnFindBookByAuthor.Location = new System.Drawing.Point(349, 52);
-      this.btnFindBookByAuthor.Name = "btnFindBookByAuthor";
-      this.btnFindBookByAuthor.Size = new System.Drawing.Size(75, 23);
-      this.btnFindBookByAuthor.TabIndex = 9;
-      this.btnFindBookByAuthor.Text = "Search";
-      this.btnFindBookByAuthor.UseVisualStyleBackColor = true;
-      this.btnFindBookByAuthor.Click += new System.EventHandler(this.btnFindBookByAuthor_Click);
-      // 
-      // btnFindBookByTitle
-      // 
-      this.btnFindBookByTitle.Location = new System.Drawing.Point(349, 23);
-      this.btnFindBookByTitle.Name = "btnFindBookByTitle";
-      this.btnFindBookByTitle.Size = new System.Drawing.Size(75, 23);
-      this.btnFindBookByTitle.TabIndex = 8;
-      this.btnFindBookByTitle.Text = "Search";
-      this.btnFindBookByTitle.UseVisualStyleBackColor = true;
-      this.btnFindBookByTitle.Click += new System.EventHandler(this.btnFindBookByTitle_Click);
+      this.btnFindBooks.Location = new System.Drawing.Point(349, 141);
+      this.btnFindBooks.Name = "btnFindBooks";
+      this.btnFindBooks.Size = new System.Drawing.Size(75, 23);
+      this.btnFindBooks.TabIndex = 11;
+      this.btnFindBooks.Text = "Search";
+      this.btnFindBooks.UseVisualStyleBackColor = true;
+      this.btnFindBooks.Click += new System.EventHandler(this.btnFindBooks_Click);
       // 
       // label4
       // 
@@ -274,7 +209,7 @@
       // 
       this.textBoxFindBooksByPublicationDate.Location = new System.Drawing.Point(120, 110);
       this.textBoxFindBooksByPublicationDate.Name = "textBoxFindBooksByPublicationDate";
-      this.textBoxFindBooksByPublicationDate.Size = new System.Drawing.Size(188, 23);
+      this.textBoxFindBooksByPublicationDate.Size = new System.Drawing.Size(304, 23);
       this.textBoxFindBooksByPublicationDate.TabIndex = 6;
       // 
       // label3
@@ -290,7 +225,7 @@
       // 
       this.textBoxFindBooksByCategory.Location = new System.Drawing.Point(120, 81);
       this.textBoxFindBooksByCategory.Name = "textBoxFindBooksByCategory";
-      this.textBoxFindBooksByCategory.Size = new System.Drawing.Size(188, 23);
+      this.textBoxFindBooksByCategory.Size = new System.Drawing.Size(304, 23);
       this.textBoxFindBooksByCategory.TabIndex = 4;
       // 
       // label2
@@ -306,7 +241,7 @@
       // 
       this.textBoxFindBooksByAuthor.Location = new System.Drawing.Point(120, 52);
       this.textBoxFindBooksByAuthor.Name = "textBoxFindBooksByAuthor";
-      this.textBoxFindBooksByAuthor.Size = new System.Drawing.Size(188, 23);
+      this.textBoxFindBooksByAuthor.Size = new System.Drawing.Size(304, 23);
       this.textBoxFindBooksByAuthor.TabIndex = 2;
       // 
       // label1
@@ -322,7 +257,7 @@
       // 
       this.textBoxFindBooksByTitle.Location = new System.Drawing.Point(120, 23);
       this.textBoxFindBooksByTitle.Name = "textBoxFindBooksByTitle";
-      this.textBoxFindBooksByTitle.Size = new System.Drawing.Size(188, 23);
+      this.textBoxFindBooksByTitle.Size = new System.Drawing.Size(304, 23);
       this.textBoxFindBooksByTitle.TabIndex = 0;
       // 
       // labelNoResult
@@ -347,7 +282,7 @@
       // label5
       // 
       this.label5.AutoSize = true;
-      this.label5.Location = new System.Drawing.Point(352, 1);
+      this.label5.Location = new System.Drawing.Point(459, 0);
       this.label5.Name = "label5";
       this.label5.Size = new System.Drawing.Size(39, 15);
       this.label5.TabIndex = 0;
@@ -399,7 +334,6 @@
       // tabControl3
       // 
       this.tabControl3.Controls.Add(this.tabPage3);
-      this.tabControl3.Controls.Add(this.tabPage4);
       this.tabControl3.Location = new System.Drawing.Point(6, 6);
       this.tabControl3.Multiline = true;
       this.tabControl3.Name = "tabControl3";
@@ -431,22 +365,23 @@
       // 
       // splitContainer2.Panel2
       // 
+      this.splitContainer2.Panel2.Controls.Add(this.btnAddBook);
       this.splitContainer2.Panel2.Controls.Add(this.textBox1);
       this.splitContainer2.Panel2.Controls.Add(this.label27);
-      this.splitContainer2.Panel2.Controls.Add(this.labelUpdateBookStatus);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookIndex);
+      this.splitContainer2.Panel2.Controls.Add(this.labelHandleBookStatus);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookIndex);
       this.splitContainer2.Panel2.Controls.Add(this.label25);
       this.splitContainer2.Panel2.Controls.Add(this.btnDeleteBook);
       this.splitContainer2.Panel2.Controls.Add(this.btnUpdateBook);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookCode);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookCode);
       this.splitContainer2.Panel2.Controls.Add(this.label12);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookCategory);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookCategory);
       this.splitContainer2.Panel2.Controls.Add(this.label13);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookPublicationDate);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookPublicationDate);
       this.splitContainer2.Panel2.Controls.Add(this.label14);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookAuthor);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookAuthor);
       this.splitContainer2.Panel2.Controls.Add(this.label15);
-      this.splitContainer2.Panel2.Controls.Add(this.textBoxAllBookTitle);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookTitle);
       this.splitContainer2.Panel2.Controls.Add(this.label16);
       this.splitContainer2.Panel2.Controls.Add(this.label11);
       this.splitContainer2.Size = new System.Drawing.Size(940, 455);
@@ -462,6 +397,16 @@
       this.dataGridViewBooks.Size = new System.Drawing.Size(564, 444);
       this.dataGridViewBooks.TabIndex = 0;
       this.dataGridViewBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooks_CellContentClick);
+      // 
+      // btnAddBook
+      // 
+      this.btnAddBook.Location = new System.Drawing.Point(276, 282);
+      this.btnAddBook.Name = "btnAddBook";
+      this.btnAddBook.Size = new System.Drawing.Size(75, 23);
+      this.btnAddBook.TabIndex = 28;
+      this.btnAddBook.Text = "Add";
+      this.btnAddBook.UseVisualStyleBackColor = true;
+      this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
       // 
       // textBox1
       // 
@@ -479,22 +424,22 @@
       this.label27.TabIndex = 26;
       this.label27.Text = "Status";
       // 
-      // labelUpdateBookStatus
+      // labelHandleBookStatus
       // 
-      this.labelUpdateBookStatus.AutoSize = true;
-      this.labelUpdateBookStatus.Location = new System.Drawing.Point(17, 257);
-      this.labelUpdateBookStatus.Name = "labelUpdateBookStatus";
-      this.labelUpdateBookStatus.Size = new System.Drawing.Size(0, 15);
-      this.labelUpdateBookStatus.TabIndex = 25;
-      this.labelUpdateBookStatus.Visible = false;
+      this.labelHandleBookStatus.AutoSize = true;
+      this.labelHandleBookStatus.Location = new System.Drawing.Point(17, 290);
+      this.labelHandleBookStatus.Name = "labelHandleBookStatus";
+      this.labelHandleBookStatus.Size = new System.Drawing.Size(0, 15);
+      this.labelHandleBookStatus.TabIndex = 25;
+      this.labelHandleBookStatus.Visible = false;
       // 
-      // textBoxAllBookIndex
+      // textBoxBookIndex
       // 
-      this.textBoxAllBookIndex.Location = new System.Drawing.Point(147, 41);
-      this.textBoxAllBookIndex.Name = "textBoxAllBookIndex";
-      this.textBoxAllBookIndex.ReadOnly = true;
-      this.textBoxAllBookIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookIndex.TabIndex = 24;
+      this.textBoxBookIndex.Location = new System.Drawing.Point(147, 41);
+      this.textBoxBookIndex.Name = "textBoxBookIndex";
+      this.textBoxBookIndex.ReadOnly = true;
+      this.textBoxBookIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookIndex.TabIndex = 24;
       // 
       // label25
       // 
@@ -513,6 +458,7 @@
       this.btnDeleteBook.TabIndex = 22;
       this.btnDeleteBook.Text = "Delete";
       this.btnDeleteBook.UseVisualStyleBackColor = true;
+      this.btnDeleteBook.Click += new System.EventHandler(this.btnDeleteBook_Click);
       // 
       // btnUpdateBook
       // 
@@ -524,12 +470,12 @@
       this.btnUpdateBook.UseVisualStyleBackColor = true;
       this.btnUpdateBook.Click += new System.EventHandler(this.btnUpdateBook_Click);
       // 
-      // textBoxAllBookCode
+      // textBoxBookCode
       // 
-      this.textBoxAllBookCode.Location = new System.Drawing.Point(147, 185);
-      this.textBoxAllBookCode.Name = "textBoxAllBookCode";
-      this.textBoxAllBookCode.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookCode.TabIndex = 20;
+      this.textBoxBookCode.Location = new System.Drawing.Point(147, 185);
+      this.textBoxBookCode.Name = "textBoxBookCode";
+      this.textBoxBookCode.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookCode.TabIndex = 20;
       // 
       // label12
       // 
@@ -540,12 +486,12 @@
       this.label12.TabIndex = 19;
       this.label12.Text = "Code";
       // 
-      // textBoxAllBookCategory
+      // textBoxBookCategory
       // 
-      this.textBoxAllBookCategory.Location = new System.Drawing.Point(147, 156);
-      this.textBoxAllBookCategory.Name = "textBoxAllBookCategory";
-      this.textBoxAllBookCategory.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookCategory.TabIndex = 18;
+      this.textBoxBookCategory.Location = new System.Drawing.Point(147, 156);
+      this.textBoxBookCategory.Name = "textBoxBookCategory";
+      this.textBoxBookCategory.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookCategory.TabIndex = 18;
       // 
       // label13
       // 
@@ -556,12 +502,12 @@
       this.label13.TabIndex = 17;
       this.label13.Text = "Category";
       // 
-      // textBoxAllBookPublicationDate
+      // textBoxBookPublicationDate
       // 
-      this.textBoxAllBookPublicationDate.Location = new System.Drawing.Point(147, 127);
-      this.textBoxAllBookPublicationDate.Name = "textBoxAllBookPublicationDate";
-      this.textBoxAllBookPublicationDate.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookPublicationDate.TabIndex = 16;
+      this.textBoxBookPublicationDate.Location = new System.Drawing.Point(147, 127);
+      this.textBoxBookPublicationDate.Name = "textBoxBookPublicationDate";
+      this.textBoxBookPublicationDate.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookPublicationDate.TabIndex = 16;
       // 
       // label14
       // 
@@ -572,12 +518,12 @@
       this.label14.TabIndex = 15;
       this.label14.Text = "Publication Date";
       // 
-      // textBoxAllBookAuthor
+      // textBoxBookAuthor
       // 
-      this.textBoxAllBookAuthor.Location = new System.Drawing.Point(147, 98);
-      this.textBoxAllBookAuthor.Name = "textBoxAllBookAuthor";
-      this.textBoxAllBookAuthor.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookAuthor.TabIndex = 14;
+      this.textBoxBookAuthor.Location = new System.Drawing.Point(147, 98);
+      this.textBoxBookAuthor.Name = "textBoxBookAuthor";
+      this.textBoxBookAuthor.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookAuthor.TabIndex = 14;
       // 
       // label15
       // 
@@ -588,12 +534,12 @@
       this.label15.TabIndex = 13;
       this.label15.Text = "Author";
       // 
-      // textBoxAllBookTitle
+      // textBoxBookTitle
       // 
-      this.textBoxAllBookTitle.Location = new System.Drawing.Point(147, 69);
-      this.textBoxAllBookTitle.Name = "textBoxAllBookTitle";
-      this.textBoxAllBookTitle.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllBookTitle.TabIndex = 12;
+      this.textBoxBookTitle.Location = new System.Drawing.Point(147, 69);
+      this.textBoxBookTitle.Name = "textBoxBookTitle";
+      this.textBoxBookTitle.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookTitle.TabIndex = 12;
       // 
       // label16
       // 
@@ -613,127 +559,6 @@
       this.label11.TabIndex = 0;
       this.label11.Text = "Book Info";
       // 
-      // tabPage4
-      // 
-      this.tabPage4.Controls.Add(this.labelAddBookStatus);
-      this.tabPage4.Controls.Add(this.btnAddBook);
-      this.tabPage4.Controls.Add(this.textBoxAddBookCode);
-      this.tabPage4.Controls.Add(this.label10);
-      this.tabPage4.Controls.Add(this.textBoxAddBookCategory);
-      this.tabPage4.Controls.Add(this.label9);
-      this.tabPage4.Controls.Add(this.textBoxAddBookPublicationDate);
-      this.tabPage4.Controls.Add(this.label8);
-      this.tabPage4.Controls.Add(this.textBoxAddBookAuthor);
-      this.tabPage4.Controls.Add(this.label7);
-      this.tabPage4.Controls.Add(this.textBoxAddBookTitle);
-      this.tabPage4.Controls.Add(this.label6);
-      this.tabPage4.Location = new System.Drawing.Point(4, 24);
-      this.tabPage4.Name = "tabPage4";
-      this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage4.Size = new System.Drawing.Size(946, 461);
-      this.tabPage4.TabIndex = 1;
-      this.tabPage4.Text = "Add book";
-      this.tabPage4.UseVisualStyleBackColor = true;
-      // 
-      // labelAddBookStatus
-      // 
-      this.labelAddBookStatus.AutoSize = true;
-      this.labelAddBookStatus.Location = new System.Drawing.Point(253, 213);
-      this.labelAddBookStatus.Name = "labelAddBookStatus";
-      this.labelAddBookStatus.Size = new System.Drawing.Size(0, 15);
-      this.labelAddBookStatus.TabIndex = 11;
-      this.labelAddBookStatus.Visible = false;
-      // 
-      // btnAddBook
-      // 
-      this.btnAddBook.Location = new System.Drawing.Point(615, 159);
-      this.btnAddBook.Name = "btnAddBook";
-      this.btnAddBook.Size = new System.Drawing.Size(75, 23);
-      this.btnAddBook.TabIndex = 10;
-      this.btnAddBook.Text = "Add";
-      this.btnAddBook.UseVisualStyleBackColor = true;
-      this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
-      // 
-      // textBoxAddBookCode
-      // 
-      this.textBoxAddBookCode.Location = new System.Drawing.Point(379, 130);
-      this.textBoxAddBookCode.Name = "textBoxAddBookCode";
-      this.textBoxAddBookCode.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddBookCode.TabIndex = 9;
-      // 
-      // label10
-      // 
-      this.label10.AutoSize = true;
-      this.label10.Location = new System.Drawing.Point(249, 133);
-      this.label10.Name = "label10";
-      this.label10.Size = new System.Drawing.Size(35, 15);
-      this.label10.TabIndex = 8;
-      this.label10.Text = "Code";
-      // 
-      // textBoxAddBookCategory
-      // 
-      this.textBoxAddBookCategory.Location = new System.Drawing.Point(379, 101);
-      this.textBoxAddBookCategory.Name = "textBoxAddBookCategory";
-      this.textBoxAddBookCategory.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddBookCategory.TabIndex = 7;
-      // 
-      // label9
-      // 
-      this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(249, 104);
-      this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(55, 15);
-      this.label9.TabIndex = 6;
-      this.label9.Text = "Category";
-      // 
-      // textBoxAddBookPublicationDate
-      // 
-      this.textBoxAddBookPublicationDate.Location = new System.Drawing.Point(379, 72);
-      this.textBoxAddBookPublicationDate.Name = "textBoxAddBookPublicationDate";
-      this.textBoxAddBookPublicationDate.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddBookPublicationDate.TabIndex = 5;
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(249, 75);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(94, 15);
-      this.label8.TabIndex = 4;
-      this.label8.Text = "Publication Date";
-      // 
-      // textBoxAddBookAuthor
-      // 
-      this.textBoxAddBookAuthor.Location = new System.Drawing.Point(379, 43);
-      this.textBoxAddBookAuthor.Name = "textBoxAddBookAuthor";
-      this.textBoxAddBookAuthor.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddBookAuthor.TabIndex = 3;
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(249, 46);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(44, 15);
-      this.label7.TabIndex = 2;
-      this.label7.Text = "Author";
-      // 
-      // textBoxAddBookTitle
-      // 
-      this.textBoxAddBookTitle.Location = new System.Drawing.Point(379, 14);
-      this.textBoxAddBookTitle.Name = "textBoxAddBookTitle";
-      this.textBoxAddBookTitle.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddBookTitle.TabIndex = 1;
-      // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(249, 17);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(29, 15);
-      this.label6.TabIndex = 0;
-      this.label6.Text = "Title";
-      // 
       // tabPage2
       // 
       this.tabPage2.Controls.Add(this.tabControl4);
@@ -748,7 +573,6 @@
       // tabControl4
       // 
       this.tabControl4.Controls.Add(this.tabPage5);
-      this.tabControl4.Controls.Add(this.tabPage6);
       this.tabControl4.Location = new System.Drawing.Point(6, 6);
       this.tabControl4.Name = "tabControl4";
       this.tabControl4.SelectedIndex = 0;
@@ -778,23 +602,25 @@
       // 
       // splitContainer3.Panel2
       // 
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberIndex);
+      this.splitContainer3.Panel2.Controls.Add(this.labelHandleMemberStatus);
+      this.splitContainer3.Panel2.Controls.Add(this.btnAddMember);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberIndex);
       this.splitContainer3.Panel2.Controls.Add(this.label26);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberCheckedOutBooks);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberCheckedOutBooks);
       this.splitContainer3.Panel2.Controls.Add(this.label24);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberDateOfBirth);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberDateOfBirth);
       this.splitContainer3.Panel2.Controls.Add(this.label23);
       this.splitContainer3.Panel2.Controls.Add(this.btnDeleteMember);
       this.splitContainer3.Panel2.Controls.Add(this.btnUpdateMember);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberEmail);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberEmail);
       this.splitContainer3.Panel2.Controls.Add(this.label17);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberPhoneNumber);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberPhoneNumber);
       this.splitContainer3.Panel2.Controls.Add(this.label18);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberClassName);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberClassName);
       this.splitContainer3.Panel2.Controls.Add(this.label19);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberStudentID);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberStudentID);
       this.splitContainer3.Panel2.Controls.Add(this.label20);
-      this.splitContainer3.Panel2.Controls.Add(this.textBoxAllMemberInfo);
+      this.splitContainer3.Panel2.Controls.Add(this.textBoxMemberName);
       this.splitContainer3.Panel2.Controls.Add(this.label21);
       this.splitContainer3.Panel2.Controls.Add(this.label22);
       this.splitContainer3.Size = new System.Drawing.Size(943, 458);
@@ -809,14 +635,34 @@
       this.dataGridViewMembers.RowTemplate.Height = 25;
       this.dataGridViewMembers.Size = new System.Drawing.Size(556, 452);
       this.dataGridViewMembers.TabIndex = 0;
+      this.dataGridViewMembers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMembers_CellContentClick);
       // 
-      // textBoxAllMemberIndex
+      // labelHandleMemberStatus
       // 
-      this.textBoxAllMemberIndex.Location = new System.Drawing.Point(142, 39);
-      this.textBoxAllMemberIndex.Name = "textBoxAllMemberIndex";
-      this.textBoxAllMemberIndex.ReadOnly = true;
-      this.textBoxAllMemberIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberIndex.TabIndex = 41;
+      this.labelHandleMemberStatus.AutoSize = true;
+      this.labelHandleMemberStatus.Location = new System.Drawing.Point(11, 307);
+      this.labelHandleMemberStatus.Name = "labelHandleMemberStatus";
+      this.labelHandleMemberStatus.Size = new System.Drawing.Size(0, 15);
+      this.labelHandleMemberStatus.TabIndex = 43;
+      this.labelHandleMemberStatus.Visible = false;
+      // 
+      // btnAddMember
+      // 
+      this.btnAddMember.Location = new System.Drawing.Point(271, 303);
+      this.btnAddMember.Name = "btnAddMember";
+      this.btnAddMember.Size = new System.Drawing.Size(75, 23);
+      this.btnAddMember.TabIndex = 42;
+      this.btnAddMember.Text = "Add";
+      this.btnAddMember.UseVisualStyleBackColor = true;
+      this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
+      // 
+      // textBoxMemberIndex
+      // 
+      this.textBoxMemberIndex.Location = new System.Drawing.Point(142, 39);
+      this.textBoxMemberIndex.Name = "textBoxMemberIndex";
+      this.textBoxMemberIndex.ReadOnly = true;
+      this.textBoxMemberIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberIndex.TabIndex = 41;
       // 
       // label26
       // 
@@ -827,12 +673,12 @@
       this.label26.TabIndex = 40;
       this.label26.Text = "Index";
       // 
-      // textBoxAllMemberCheckedOutBooks
+      // textBoxMemberCheckedOutBooks
       // 
-      this.textBoxAllMemberCheckedOutBooks.Location = new System.Drawing.Point(142, 245);
-      this.textBoxAllMemberCheckedOutBooks.Name = "textBoxAllMemberCheckedOutBooks";
-      this.textBoxAllMemberCheckedOutBooks.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberCheckedOutBooks.TabIndex = 39;
+      this.textBoxMemberCheckedOutBooks.Location = new System.Drawing.Point(142, 245);
+      this.textBoxMemberCheckedOutBooks.Name = "textBoxMemberCheckedOutBooks";
+      this.textBoxMemberCheckedOutBooks.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberCheckedOutBooks.TabIndex = 39;
       // 
       // label24
       // 
@@ -843,12 +689,12 @@
       this.label24.TabIndex = 38;
       this.label24.Text = "Checked-out books";
       // 
-      // textBoxAllMemberDateOfBirth
+      // textBoxMemberDateOfBirth
       // 
-      this.textBoxAllMemberDateOfBirth.Location = new System.Drawing.Point(142, 97);
-      this.textBoxAllMemberDateOfBirth.Name = "textBoxAllMemberDateOfBirth";
-      this.textBoxAllMemberDateOfBirth.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberDateOfBirth.TabIndex = 37;
+      this.textBoxMemberDateOfBirth.Location = new System.Drawing.Point(142, 97);
+      this.textBoxMemberDateOfBirth.Name = "textBoxMemberDateOfBirth";
+      this.textBoxMemberDateOfBirth.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberDateOfBirth.TabIndex = 37;
       // 
       // label23
       // 
@@ -867,6 +713,7 @@
       this.btnDeleteMember.TabIndex = 35;
       this.btnDeleteMember.Text = "Delete";
       this.btnDeleteMember.UseVisualStyleBackColor = true;
+      this.btnDeleteMember.Click += new System.EventHandler(this.btnDeleteMember_Click);
       // 
       // btnUpdateMember
       // 
@@ -877,12 +724,12 @@
       this.btnUpdateMember.Text = "Update";
       this.btnUpdateMember.UseVisualStyleBackColor = true;
       // 
-      // textBoxAllMemberEmail
+      // textBoxMemberEmail
       // 
-      this.textBoxAllMemberEmail.Location = new System.Drawing.Point(142, 216);
-      this.textBoxAllMemberEmail.Name = "textBoxAllMemberEmail";
-      this.textBoxAllMemberEmail.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberEmail.TabIndex = 33;
+      this.textBoxMemberEmail.Location = new System.Drawing.Point(142, 216);
+      this.textBoxMemberEmail.Name = "textBoxMemberEmail";
+      this.textBoxMemberEmail.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberEmail.TabIndex = 33;
       // 
       // label17
       // 
@@ -893,12 +740,12 @@
       this.label17.TabIndex = 32;
       this.label17.Text = "Email";
       // 
-      // textBoxAllMemberPhoneNumber
+      // textBoxMemberPhoneNumber
       // 
-      this.textBoxAllMemberPhoneNumber.Location = new System.Drawing.Point(142, 187);
-      this.textBoxAllMemberPhoneNumber.Name = "textBoxAllMemberPhoneNumber";
-      this.textBoxAllMemberPhoneNumber.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberPhoneNumber.TabIndex = 31;
+      this.textBoxMemberPhoneNumber.Location = new System.Drawing.Point(142, 187);
+      this.textBoxMemberPhoneNumber.Name = "textBoxMemberPhoneNumber";
+      this.textBoxMemberPhoneNumber.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberPhoneNumber.TabIndex = 31;
       // 
       // label18
       // 
@@ -909,12 +756,12 @@
       this.label18.TabIndex = 30;
       this.label18.Text = "Phone number";
       // 
-      // textBoxAllMemberClassName
+      // textBoxMemberClassName
       // 
-      this.textBoxAllMemberClassName.Location = new System.Drawing.Point(142, 158);
-      this.textBoxAllMemberClassName.Name = "textBoxAllMemberClassName";
-      this.textBoxAllMemberClassName.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberClassName.TabIndex = 29;
+      this.textBoxMemberClassName.Location = new System.Drawing.Point(142, 158);
+      this.textBoxMemberClassName.Name = "textBoxMemberClassName";
+      this.textBoxMemberClassName.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberClassName.TabIndex = 29;
       // 
       // label19
       // 
@@ -925,12 +772,12 @@
       this.label19.TabIndex = 28;
       this.label19.Text = "Class name";
       // 
-      // textBoxAllMemberStudentID
+      // textBoxMemberStudentID
       // 
-      this.textBoxAllMemberStudentID.Location = new System.Drawing.Point(142, 126);
-      this.textBoxAllMemberStudentID.Name = "textBoxAllMemberStudentID";
-      this.textBoxAllMemberStudentID.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberStudentID.TabIndex = 27;
+      this.textBoxMemberStudentID.Location = new System.Drawing.Point(142, 126);
+      this.textBoxMemberStudentID.Name = "textBoxMemberStudentID";
+      this.textBoxMemberStudentID.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberStudentID.TabIndex = 27;
       // 
       // label20
       // 
@@ -941,12 +788,12 @@
       this.label20.TabIndex = 26;
       this.label20.Text = "Student ID";
       // 
-      // textBoxAllMemberInfo
+      // textBoxMemberName
       // 
-      this.textBoxAllMemberInfo.Location = new System.Drawing.Point(142, 68);
-      this.textBoxAllMemberInfo.Name = "textBoxAllMemberInfo";
-      this.textBoxAllMemberInfo.Size = new System.Drawing.Size(204, 23);
-      this.textBoxAllMemberInfo.TabIndex = 25;
+      this.textBoxMemberName.Location = new System.Drawing.Point(142, 68);
+      this.textBoxMemberName.Name = "textBoxMemberName";
+      this.textBoxMemberName.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberName.TabIndex = 25;
       // 
       // label21
       // 
@@ -965,163 +812,6 @@
       this.label22.Size = new System.Drawing.Size(76, 15);
       this.label22.TabIndex = 23;
       this.label22.Text = "Member Info";
-      // 
-      // tabPage6
-      // 
-      this.tabPage6.Controls.Add(this.labelAddMemberStatus);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberCheckedOutBooks);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberEmail);
-      this.tabPage6.Controls.Add(this.label30);
-      this.tabPage6.Controls.Add(this.btnAddMember);
-      this.tabPage6.Controls.Add(this.label31);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberPhoneNumber);
-      this.tabPage6.Controls.Add(this.label32);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberClassName);
-      this.tabPage6.Controls.Add(this.label33);
-      this.tabPage6.Controls.Add(this.label34);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberStudentID);
-      this.tabPage6.Controls.Add(this.label35);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberDateOfBirth);
-      this.tabPage6.Controls.Add(this.label36);
-      this.tabPage6.Controls.Add(this.textBoxAddMemberName);
-      this.tabPage6.Location = new System.Drawing.Point(4, 24);
-      this.tabPage6.Name = "tabPage6";
-      this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-      this.tabPage6.Size = new System.Drawing.Size(949, 464);
-      this.tabPage6.TabIndex = 1;
-      this.tabPage6.Text = "Add member";
-      this.tabPage6.UseVisualStyleBackColor = true;
-      // 
-      // labelAddMemberStatus
-      // 
-      this.labelAddMemberStatus.AutoSize = true;
-      this.labelAddMemberStatus.Location = new System.Drawing.Point(251, 268);
-      this.labelAddMemberStatus.Name = "labelAddMemberStatus";
-      this.labelAddMemberStatus.Size = new System.Drawing.Size(0, 15);
-      this.labelAddMemberStatus.TabIndex = 55;
-      this.labelAddMemberStatus.Visible = false;
-      // 
-      // textBoxAddMemberCheckedOutBooks
-      // 
-      this.textBoxAddMemberCheckedOutBooks.Location = new System.Drawing.Point(377, 187);
-      this.textBoxAddMemberCheckedOutBooks.Name = "textBoxAddMemberCheckedOutBooks";
-      this.textBoxAddMemberCheckedOutBooks.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberCheckedOutBooks.TabIndex = 54;
-      // 
-      // textBoxAddMemberEmail
-      // 
-      this.textBoxAddMemberEmail.Location = new System.Drawing.Point(377, 158);
-      this.textBoxAddMemberEmail.Name = "textBoxAddMemberEmail";
-      this.textBoxAddMemberEmail.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberEmail.TabIndex = 53;
-      // 
-      // label30
-      // 
-      this.label30.AutoSize = true;
-      this.label30.Location = new System.Drawing.Point(247, 195);
-      this.label30.Name = "label30";
-      this.label30.Size = new System.Drawing.Size(111, 15);
-      this.label30.TabIndex = 52;
-      this.label30.Text = "Checked-out books";
-      // 
-      // btnAddMember
-      // 
-      this.btnAddMember.Location = new System.Drawing.Point(613, 216);
-      this.btnAddMember.Name = "btnAddMember";
-      this.btnAddMember.Size = new System.Drawing.Size(75, 23);
-      this.btnAddMember.TabIndex = 21;
-      this.btnAddMember.Text = "Add";
-      this.btnAddMember.UseVisualStyleBackColor = true;
-      this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
-      // 
-      // label31
-      // 
-      this.label31.AutoSize = true;
-      this.label31.Location = new System.Drawing.Point(247, 47);
-      this.label31.Name = "label31";
-      this.label31.Size = new System.Drawing.Size(73, 15);
-      this.label31.TabIndex = 51;
-      this.label31.Text = "Date of birth";
-      // 
-      // textBoxAddMemberPhoneNumber
-      // 
-      this.textBoxAddMemberPhoneNumber.Location = new System.Drawing.Point(377, 129);
-      this.textBoxAddMemberPhoneNumber.Name = "textBoxAddMemberPhoneNumber";
-      this.textBoxAddMemberPhoneNumber.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberPhoneNumber.TabIndex = 20;
-      // 
-      // label32
-      // 
-      this.label32.AutoSize = true;
-      this.label32.Location = new System.Drawing.Point(247, 166);
-      this.label32.Name = "label32";
-      this.label32.Size = new System.Drawing.Size(36, 15);
-      this.label32.TabIndex = 50;
-      this.label32.Text = "Email";
-      // 
-      // textBoxAddMemberClassName
-      // 
-      this.textBoxAddMemberClassName.Location = new System.Drawing.Point(377, 100);
-      this.textBoxAddMemberClassName.Name = "textBoxAddMemberClassName";
-      this.textBoxAddMemberClassName.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberClassName.TabIndex = 18;
-      // 
-      // label33
-      // 
-      this.label33.AutoSize = true;
-      this.label33.Location = new System.Drawing.Point(247, 137);
-      this.label33.Name = "label33";
-      this.label33.Size = new System.Drawing.Size(86, 15);
-      this.label33.TabIndex = 49;
-      this.label33.Text = "Phone number";
-      // 
-      // label34
-      // 
-      this.label34.AutoSize = true;
-      this.label34.Location = new System.Drawing.Point(247, 108);
-      this.label34.Name = "label34";
-      this.label34.Size = new System.Drawing.Size(67, 15);
-      this.label34.TabIndex = 48;
-      this.label34.Text = "Class name";
-      // 
-      // textBoxAddMemberStudentID
-      // 
-      this.textBoxAddMemberStudentID.Location = new System.Drawing.Point(377, 71);
-      this.textBoxAddMemberStudentID.Name = "textBoxAddMemberStudentID";
-      this.textBoxAddMemberStudentID.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberStudentID.TabIndex = 16;
-      // 
-      // label35
-      // 
-      this.label35.AutoSize = true;
-      this.label35.Location = new System.Drawing.Point(247, 79);
-      this.label35.Name = "label35";
-      this.label35.Size = new System.Drawing.Size(62, 15);
-      this.label35.TabIndex = 47;
-      this.label35.Text = "Student ID";
-      // 
-      // textBoxAddMemberDateOfBirth
-      // 
-      this.textBoxAddMemberDateOfBirth.Location = new System.Drawing.Point(377, 42);
-      this.textBoxAddMemberDateOfBirth.Name = "textBoxAddMemberDateOfBirth";
-      this.textBoxAddMemberDateOfBirth.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberDateOfBirth.TabIndex = 14;
-      // 
-      // label36
-      // 
-      this.label36.AutoSize = true;
-      this.label36.Location = new System.Drawing.Point(247, 18);
-      this.label36.Name = "label36";
-      this.label36.Size = new System.Drawing.Size(39, 15);
-      this.label36.TabIndex = 46;
-      this.label36.Text = "Name";
-      // 
-      // textBoxAddMemberName
-      // 
-      this.textBoxAddMemberName.Location = new System.Drawing.Point(377, 13);
-      this.textBoxAddMemberName.Name = "textBoxAddMemberName";
-      this.textBoxAddMemberName.Size = new System.Drawing.Size(311, 23);
-      this.textBoxAddMemberName.TabIndex = 12;
       // 
       // OptionPage
       // 
@@ -1165,8 +855,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
       this.splitContainer2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooks)).EndInit();
-      this.tabPage4.ResumeLayout(false);
-      this.tabPage4.PerformLayout();
       this.tabPage2.ResumeLayout(false);
       this.tabControl4.ResumeLayout(false);
       this.tabPage5.ResumeLayout(false);
@@ -1176,8 +864,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
       this.splitContainer3.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMembers)).EndInit();
-      this.tabPage6.ResumeLayout(false);
-      this.tabPage6.PerformLayout();
       this.ResumeLayout(false);
 
         }
@@ -1198,92 +884,62 @@
     private TextBox textBoxFindBooksByPublicationDate;
     private Label label3;
     private TextBox textBoxFindBooksByCategory;
-    private Button btnFindBookByTitle;
     private Label label5;
     private DataGridView dataGridViewFindBooks;
     private GroupBox Manage;
     private TabControl tabControl2;
     private TabPage tabPage1;
     private TabPage tabPage2;
-    private TabControl tabControl3;
-    private TabPage tabPage3;
-    private TabPage tabPage4;
-    private TextBox textBoxAddBookTitle;
-    private Label label6;
-    private TextBox textBoxAddBookAuthor;
-    private Label label7;
-    private TextBox textBoxAddBookPublicationDate;
-    private Label label8;
-    private TextBox textBoxAddBookCode;
-    private Label label10;
-    private TextBox textBoxAddBookCategory;
-    private Label label9;
-    private Button btnAddBook;
-    private SplitContainer splitContainer2;
-    private DataGridView dataGridViewBooks;
-    private Label label11;
-    private TextBox textBoxAllBookCode;
-    private Label label12;
-    private TextBox textBoxAllBookCategory;
-    private Label label13;
-    private TextBox textBoxAllBookPublicationDate;
-    private Label label14;
-    private TextBox textBoxAllBookAuthor;
-    private Label label15;
-    private TextBox textBoxAllBookTitle;
-    private Label label16;
-    private Button btnDeleteBook;
-    private Button btnUpdateBook;
     private TabControl tabControl4;
     private TabPage tabPage5;
-    private TabPage tabPage6;
     private SplitContainer splitContainer3;
     private DataGridView dataGridViewMembers;
     private Button btnDeleteMember;
     private Button btnUpdateMember;
-    private TextBox textBoxAllMemberEmail;
+    private TextBox textBoxMemberEmail;
     private Label label17;
-    private TextBox textBoxAllMemberPhoneNumber;
+    private TextBox textBoxMemberPhoneNumber;
     private Label label18;
-    private TextBox textBoxAllMemberClassName;
+    private TextBox textBoxMemberClassName;
     private Label label19;
-    private TextBox textBoxAllMemberStudentID;
+    private TextBox textBoxMemberStudentID;
     private Label label20;
-    private TextBox textBoxAllMemberInfo;
+    private TextBox textBoxMemberName;
     private Label label21;
     private Label label22;
-    private TextBox textBoxAllMemberDateOfBirth;
+    private TextBox textBoxMemberDateOfBirth;
     private Label label23;
-    private TextBox textBoxAllMemberCheckedOutBooks;
+    private TextBox textBoxMemberCheckedOutBooks;
     private Label label24;
-    private TextBox textBoxAddMemberCheckedOutBooks;
-    private TextBox textBoxAddMemberEmail;
-    private Label label30;
-    private Button btnAddMember;
-    private Label label31;
-    private TextBox textBoxAddMemberPhoneNumber;
-    private Label label32;
-    private TextBox textBoxAddMemberClassName;
-    private Label label33;
-    private Label label34;
-    private TextBox textBoxAddMemberStudentID;
-    private Label label35;
-    private TextBox textBoxAddMemberDateOfBirth;
-    private Label label36;
-    private TextBox textBoxAddMemberName;
-    private Button btnFindBookByPublicationDate;
-    private Button btnFindBookByCategory;
-    private Button btnFindBookByAuthor;
-    private Label labelAddBookStatus;
-    private TextBox textBoxAllBookIndex;
-    private Label label25;
-    private Label labelUpdateBookStatus;
-    private TextBox textBoxAllMemberIndex;
+    private Button btnFindBooks;
+    private TextBox textBoxMemberIndex;
     private Label label26;
-    private Label labelAddMemberStatus;
-    private TextBox textBox1;
-    private Label label27;
     private Label label28;
     private Label labelNoResult;
+    private TabControl tabControl3;
+    private TabPage tabPage3;
+    private SplitContainer splitContainer2;
+    private DataGridView dataGridViewBooks;
+    private TextBox textBox1;
+    private Label label27;
+    private Label labelHandleBookStatus;
+    private TextBox textBoxBookIndex;
+    private Label label25;
+    private Button btnDeleteBook;
+    private Button btnUpdateBook;
+    private TextBox textBoxBookCode;
+    private Label label12;
+    private TextBox textBoxBookCategory;
+    private Label label13;
+    private TextBox textBoxBookPublicationDate;
+    private Label label14;
+    private TextBox textBoxBookAuthor;
+    private Label label15;
+    private TextBox textBoxBookTitle;
+    private Label label16;
+    private Label label11;
+    private Button btnAddBook;
+    private Button btnAddMember;
+    private Label labelHandleMemberStatus;
   }
 }

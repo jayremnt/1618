@@ -112,20 +112,14 @@ namespace Jayremnt.Winform {
       return books;
     }
 
-    public List<Book> findBooks(Book[] books, int booksLength, string searchMethod = "Title", string searchText = "") {
+    public List<Book> findBooks(Book[] books, int booksLength, string titleKey = "", string authorKey = "", string categoryKey = "", string publicationDateKey = "") {
       List<Book> results = new List<Book>();
 
       for (int i = 0; i < booksLength; i++) {
-        if (searchMethod == "Title" && books[i].Title.ToLower().Contains(searchText.ToLower())) {
-          results.Add(books[i]);
-        }
-        if (searchMethod == "Author" && books[i].Author.ToLower().Contains(searchText.ToLower())) {
-          results.Add(books[i]);
-        }
-        if (searchMethod == "Category" && books[i].Category.ToLower().Contains(searchText.ToLower())) {
-          results.Add(books[i]);
-        }
-        if (searchMethod == "PublicationDate" && books[i].PublicationDate.ToLower().Contains(searchText.ToLower())) {
+        if (books[i].Title.ToLower().Contains(titleKey.ToLower())
+          && books[i].Author.ToLower().Contains(authorKey.ToLower())
+          && books[i].Category.ToLower().Contains(categoryKey.ToLower())
+          && books[i].PublicationDate.ToLower().Contains(publicationDateKey.ToLower())) {
           results.Add(books[i]);
         }
       }

@@ -19,174 +19,161 @@ namespace librarymanager {
 
       dataGridViewBooks.DataSource = books;
       dataGridViewMembers.DataSource = members;
-    }
 
-    private void btnAddBook_Click(object sender, EventArgs e) {
-      string title = textBoxAddBookTitle.Text;
-      string author = textBoxAddBookAuthor.Text;
-      string publicationDate = textBoxAddBookPublicationDate.Text;
-      string category = textBoxAddBookCategory.Text;
-      string code = textBoxAddBookCode.Text;
-
-      if (title == "" || author == "" || publicationDate == "" || category == "" || code == "") {
-        labelAddBookStatus.Text = "* Please fill out all fields";
-        labelAddBookStatus.Visible = true;
-        labelAddBookStatus.ForeColor = Color.Red;
-      }
-      else {
-        // add book
-        if (new Book().IsBookExists(books, booksLength, code)) {
-          labelAddBookStatus.Text = "* Book exists";
-          labelAddBookStatus.Visible = true;
-          labelAddBookStatus.ForeColor = Color.Red;
-        }
-        else {
-          labelAddBookStatus.Text = "* Successfully added new book!";
-          labelAddBookStatus.Visible = true;
-          labelAddBookStatus.ForeColor = Color.Blue;
-          books[booksLength] = new Book(++booksLength, title, author, publicationDate, category, code);
-        }
-      }
+      dataGridViewBooks.Refresh();
+      dataGridViewMembers.Refresh();
     }
 
     private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e) {
       if (e.RowIndex >= 0) {
         DataGridViewRow row = this.dataGridViewBooks.Rows[e.RowIndex];
-        textBoxAllBookIndex.Text = row.Cells["Index"].Value.ToString();
-        textBoxAllBookTitle.Text = row.Cells["Title"].Value.ToString();
-        textBoxAllBookAuthor.Text = row.Cells["Author"].Value.ToString();
-        textBoxAllBookPublicationDate.Text = row.Cells["PublicationDate"].Value.ToString();
-        textBoxAllBookCategory.Text = row.Cells["Category"].Value.ToString();
-        textBoxAllBookCode.Text = row.Cells["Code"].Value.ToString();
+        textBoxBookIndex.Text = row.Cells["Index"].Value.ToString();
+        textBoxBookTitle.Text = row.Cells["Title"].Value.ToString();
+        textBoxBookAuthor.Text = row.Cells["Author"].Value.ToString();
+        textBoxBookPublicationDate.Text = row.Cells["PublicationDate"].Value.ToString();
+        textBoxBookCategory.Text = row.Cells["Category"].Value.ToString();
+        textBoxBookCode.Text = row.Cells["Code"].Value.ToString();
+      }
+    }
+    private void dataGridViewMembers_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+      if (e.RowIndex >= 0) {
+        DataGridViewRow row = this.dataGridViewMembers.Rows[e.RowIndex];
+        textBoxMemberIndex.Text = row.Cells["Index"].Value.ToString();
+        textBoxMemberName.Text = row.Cells["Name"].Value.ToString();
+        textBoxMemberDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString();
+        textBoxMemberStudentID.Text = row.Cells["StudentID"].Value.ToString();
+        textBoxMemberClassName.Text = row.Cells["ClassName"].Value.ToString();
+        textBoxMemberPhoneNumber.Text = row.Cells["PhoneNumber"].Value.ToString();
+        textBoxMemberEmail.Text = row.Cells["Email"].Value.ToString();
+        textBoxMemberCheckedOutBooks.Text = row.Cells["CheckedOutBooks"].Value.ToString();
       }
     }
 
     private void btnUpdateBook_Click(object sender, EventArgs e) {
-      int index = Int32.Parse(textBoxAllBookIndex.Text);
-      string title = textBoxAllBookTitle.Text;
-      string author = textBoxAllBookAuthor.Text;
-      string publicationDate = textBoxAllBookPublicationDate.Text;
-      string category = textBoxAllBookCategory.Text;
-      string code = textBoxAllBookCode.Text;
+      int index = Int32.Parse(textBoxBookIndex.Text);
+      string title = textBoxBookTitle.Text;
+      string author = textBoxBookAuthor.Text;
+      string publicationDate = textBoxBookPublicationDate.Text;
+      string category = textBoxBookCategory.Text;
+      string code = textBoxBookCode.Text;
 
       if (books[index - 1].Code != code) {
         if (new Book().IsBookExists(books, booksLength, code)) {
-          labelUpdateBookStatus.Text = "* Book exists";
-          labelUpdateBookStatus.Visible = true;
-          labelUpdateBookStatus.ForeColor = Color.Red;
+          labelHandleBookStatus.Text = "* Book exists";
+          labelHandleBookStatus.Visible = true;
+          labelHandleBookStatus.ForeColor = Color.Red;
         }
         else {
           books[index - 1] = new Book(index, title, author, publicationDate, category, code);
-          labelUpdateBookStatus.Text = "* Updated book";
-          labelUpdateBookStatus.Visible = true;
-          labelUpdateBookStatus.ForeColor = Color.Blue;
+          labelHandleBookStatus.Text = "* Updated book";
+          labelHandleBookStatus.Visible = true;
+          labelHandleBookStatus.ForeColor = Color.Blue;
         }
       }
       else {
         books[index - 1] = new Book(index, title, author, publicationDate, category, code);
-        labelUpdateBookStatus.Text = "* Updated book";
-        labelUpdateBookStatus.Visible = true;
-        labelUpdateBookStatus.ForeColor = Color.Blue;
+        labelHandleBookStatus.Text = "* Updated book";
+        labelHandleBookStatus.Visible = true;
+        labelHandleBookStatus.ForeColor = Color.Blue;
       }
 
     }
+    private void btnDeleteBook_Click(object sender, EventArgs e) {
+      int bookIndex = Int32.Parse(textBoxBookIndex.Text) - 1;
+      books = books.Where((val, index) => index != bookIndex).ToArray();
+      dataGridViewBooks.DataSource = books;
+      dataGridViewBooks.Refresh();
+    }
+    private void btnDeleteMember_Click(object sender, EventArgs e) {
+      int memberIndex = Int32.Parse(textBoxMemberIndex.Text) - 1;
+      members = members.Where((val, index) => index != memberIndex).ToArray();
+      dataGridViewMembers.DataSource = members;
+      dataGridViewMembers.Refresh();
+    }
+
+    private void btnAddBook_Click(object sender, EventArgs e) {
+      string title = textBoxBookTitle.Text;
+      string author = textBoxBookAuthor.Text;
+      string publicationDate = textBoxBookPublicationDate.Text;
+      string category = textBoxBookCategory.Text;
+      string code = textBoxBookCode.Text;
+
+      if (title == "" || author == "" || publicationDate == "" || category == "" || code == "") {
+        labelHandleBookStatus.Text = "* Please fill out all fields";
+        labelHandleBookStatus.Visible = true;
+        labelHandleBookStatus.ForeColor = Color.Red;
+      }
+      else {
+        // add book
+        if (new Book().IsBookExists(books, booksLength, code)) {
+          labelHandleBookStatus.Text = "* Book exists";
+          labelHandleBookStatus.Visible = true;
+          labelHandleBookStatus.ForeColor = Color.Red;
+        }
+        else {
+          labelHandleBookStatus.Text = "* Successfully added new book!";
+          labelHandleBookStatus.Visible = true;
+          labelHandleBookStatus.ForeColor = Color.Blue;
+          books[booksLength] = new Book(++booksLength, title, author, publicationDate, category, code);
+          dataGridViewBooks.Refresh();
+        }
+      }
+    }
 
     private void btnAddMember_Click(object sender, EventArgs e) {
-      string name = textBoxAddMemberName.Text;
-      string dateOfBirth = textBoxAddMemberDateOfBirth.Text;
-      string studentID = textBoxAddMemberStudentID.Text;
-      string className = textBoxAddMemberClassName.Text;
-      string phoneNumber = textBoxAddMemberPhoneNumber.Text;
-      string email = textBoxAddMemberEmail.Text;
-      string checkedOutBooks = textBoxAddMemberCheckedOutBooks.Text;
+      string name = textBoxMemberName.Text;
+      string dateOfBirth = textBoxMemberDateOfBirth.Text;
+      string studentID = textBoxMemberStudentID.Text;
+      string className = textBoxMemberClassName.Text;
+      string phoneNumber = textBoxMemberPhoneNumber.Text;
+      string email = textBoxMemberEmail.Text;
+      string checkedOutBooks = textBoxMemberCheckedOutBooks.Text;
 
       if (name == "" || dateOfBirth == "" || studentID == "" || className == "" || phoneNumber == "" || email == "") {
-        labelAddMemberStatus.Text = "* Please fill out all fields";
-        labelAddMemberStatus.Visible = true;
-        labelAddMemberStatus.ForeColor = Color.Red;
+        labelHandleMemberStatus.Text = "* Please fill out all fields";
+        labelHandleMemberStatus.Visible = true;
+        labelHandleMemberStatus.ForeColor = Color.Red;
       }
       else {
         // add member
         if (new Member().IsMemberExists(members, membersLength, studentID)) {
-          labelAddMemberStatus.Text = "* Member exists";
-          labelAddMemberStatus.Visible = true;
-          labelAddMemberStatus.ForeColor = Color.Red;
+          labelHandleMemberStatus.Text = "* Member exists";
+          labelHandleMemberStatus.Visible = true;
+          labelHandleMemberStatus.ForeColor = Color.Red;
         }
         else if (new Book().IsBooksCheckedOut(books, booksLength, checkedOutBooks)) {
-          labelAddMemberStatus.Text = "* Some books were checked out.";
-          labelAddMemberStatus.Visible = true;
-          labelAddMemberStatus.ForeColor = Color.Red;
+          labelHandleMemberStatus.Text = "* Some books were checked out.";
+          labelHandleMemberStatus.Visible = true;
+          labelHandleMemberStatus.ForeColor = Color.Red;
         }
         else {
-          labelAddMemberStatus.Text = "* Successfully added new member!";
-          labelAddMemberStatus.Visible = true;
-          labelAddMemberStatus.ForeColor = Color.Blue;
+          labelHandleMemberStatus.Text = "* Successfully added new member!";
+          labelHandleMemberStatus.Visible = true;
+          labelHandleMemberStatus.ForeColor = Color.Blue;
           members[membersLength] = new Member(++membersLength, name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks);
+          dataGridViewMembers.Refresh();
         }
       }
     }
 
-    private void btnFindBookByTitle_Click(object sender, EventArgs e) {
-      string searchText = textBoxFindBooksByTitle.Text;
+    private void btnFindBooks_Click(object sender, EventArgs e) {
+      string bookTitle = textBoxFindBooksByTitle.Text;
+      string bookAuthor = textBoxFindBooksByAuthor.Text;
+      string bookCategory = textBoxFindBooksByCategory.Text;
+      string bookPublicationDate = textBoxFindBooksByPublicationDate.Text;
 
-      List<Book> results = new Book().findBooks(books, booksLength, "Title", searchText);
-
-      if (results.Count > 0) {
-        labelNoResult.Visible = false;
-        dataGridViewFindBooks.Visible = true;
-        dataGridViewFindBooks.DataSource = results;
-      }
-      else {
-        labelNoResult.Visible = true;
-        dataGridViewFindBooks.Visible = false;
-      }
-    }
-
-    private void btnFindBookByAuthor_Click(object sender, EventArgs e) {
-      string searchText = textBoxFindBooksByAuthor.Text;
-
-      List<Book> results = new Book().findBooks(books, booksLength, "Author", searchText);
+      List<Book> results = new Book().findBooks(books, booksLength, bookTitle, bookAuthor, bookCategory, bookPublicationDate);
 
       if (results.Count > 0) {
         labelNoResult.Visible = false;
         dataGridViewFindBooks.Visible = true;
         dataGridViewFindBooks.DataSource = results;
+        dataGridViewFindBooks.Refresh();
       }
       else {
         labelNoResult.Visible = true;
         dataGridViewFindBooks.Visible = false;
-      }
-    }
-
-    private void btnFindBookByCategory_Click(object sender, EventArgs e) {
-      string searchText = textBoxFindBooksByCategory.Text;
-
-      List<Book> results = new Book().findBooks(books, booksLength, "Category", searchText);
-
-      if (results.Count > 0) {
-        labelNoResult.Visible = false;
-        dataGridViewFindBooks.Visible = true;
-        dataGridViewFindBooks.DataSource = results;
-      }
-      else {
-        labelNoResult.Visible = true;
-        dataGridViewFindBooks.Visible = false;
-      }
-    }
-
-    private void btnFindBookByPublicationDate_Click(object sender, EventArgs e) {
-      string searchText = textBoxFindBooksByPublicationDate.Text;
-
-      List<Book> results = new Book().findBooks(books, booksLength, "PublicationDate", searchText);
-
-      if (results.Count > 0) {
-        labelNoResult.Visible = false;
-        dataGridViewFindBooks.Visible = true;
-        dataGridViewFindBooks.DataSource = results;
-      }
-      else {
-        labelNoResult.Visible = true;
-        dataGridViewFindBooks.Visible = false;
+        dataGridViewFindBooks.Refresh();
       }
     }
   }
