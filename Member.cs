@@ -2,7 +2,6 @@
 
 namespace Jayremnt.Winform {
   public partial class Member {
-    private int index;
     private string name;
     private string dateOfBirth;
     private string studentID;
@@ -11,8 +10,7 @@ namespace Jayremnt.Winform {
     private string email;
     private string checkedOutBooks;
 
-    public Member(int Index = 0, string Name = "", string DateOfBirth = "", string StudentID = "", string ClassName = "", string PhoneNumber = "", string Email = "", string CheckedOutBooks = "") {
-      this.index = Index;
+    public Member(string Name = "", string DateOfBirth = "", string StudentID = "", string ClassName = "", string PhoneNumber = "", string Email = "", string CheckedOutBooks = "") {
       this.name = Name;
       this.dateOfBirth = DateOfBirth;
       this.studentID = StudentID;
@@ -20,11 +18,6 @@ namespace Jayremnt.Winform {
       this.phoneNumber = PhoneNumber;
       this.email = Email;
       this.checkedOutBooks = CheckedOutBooks;
-    }
-
-    public int Index {
-      get { return index; }
-      set { index = value; }
     }
 
     public string Name {
@@ -62,10 +55,10 @@ namespace Jayremnt.Winform {
       set { checkedOutBooks = value; }
     }
 
-    public bool IsMemberExists(Member[] members, int membersLength, string memberStudentID) {
+    public bool IsMemberExists(List<Member> members, string memberStudentID) {
       bool isMemberExists = false;
 
-      for (int i = 0; i < membersLength; i++) {
+      for (int i = 0; i < members.Count(); i++) {
         if (members[i].StudentID == memberStudentID) {
           isMemberExists = true;
           break;

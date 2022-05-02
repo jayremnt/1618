@@ -56,8 +56,6 @@
       this.textBox1 = new System.Windows.Forms.TextBox();
       this.label27 = new System.Windows.Forms.Label();
       this.labelHandleBookStatus = new System.Windows.Forms.Label();
-      this.textBoxBookIndex = new System.Windows.Forms.TextBox();
-      this.label25 = new System.Windows.Forms.Label();
       this.btnDeleteBook = new System.Windows.Forms.Button();
       this.btnUpdateBook = new System.Windows.Forms.Button();
       this.textBoxBookCode = new System.Windows.Forms.TextBox();
@@ -78,8 +76,6 @@
       this.dataGridViewMembers = new System.Windows.Forms.DataGridView();
       this.labelHandleMemberStatus = new System.Windows.Forms.Label();
       this.btnAddMember = new System.Windows.Forms.Button();
-      this.textBoxMemberIndex = new System.Windows.Forms.TextBox();
-      this.label26 = new System.Windows.Forms.Label();
       this.textBoxMemberCheckedOutBooks = new System.Windows.Forms.TextBox();
       this.label24 = new System.Windows.Forms.Label();
       this.textBoxMemberDateOfBirth = new System.Windows.Forms.TextBox();
@@ -98,6 +94,10 @@
       this.label21 = new System.Windows.Forms.Label();
       this.label22 = new System.Windows.Forms.Label();
       this.OptionPage = new System.Windows.Forms.TabPage();
+      this.textBoxMemberIndex = new System.Windows.Forms.TextBox();
+      this.label26 = new System.Windows.Forms.Label();
+      this.label25 = new System.Windows.Forms.Label();
+      this.textBoxBookIndex = new System.Windows.Forms.TextBox();
       this.tabControl1.SuspendLayout();
       this.findBookPage.SuspendLayout();
       this.groupBox1.SuspendLayout();
@@ -400,9 +400,10 @@
       // 
       // btnAddBook
       // 
-      this.btnAddBook.Location = new System.Drawing.Point(276, 282);
+      this.btnAddBook.Enabled = false;
+      this.btnAddBook.Location = new System.Drawing.Point(147, 253);
       this.btnAddBook.Name = "btnAddBook";
-      this.btnAddBook.Size = new System.Drawing.Size(75, 23);
+      this.btnAddBook.Size = new System.Drawing.Size(63, 23);
       this.btnAddBook.TabIndex = 28;
       this.btnAddBook.Text = "Add";
       this.btnAddBook.UseVisualStyleBackColor = true;
@@ -433,28 +434,11 @@
       this.labelHandleBookStatus.TabIndex = 25;
       this.labelHandleBookStatus.Visible = false;
       // 
-      // textBoxBookIndex
-      // 
-      this.textBoxBookIndex.Location = new System.Drawing.Point(147, 41);
-      this.textBoxBookIndex.Name = "textBoxBookIndex";
-      this.textBoxBookIndex.ReadOnly = true;
-      this.textBoxBookIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxBookIndex.TabIndex = 24;
-      // 
-      // label25
-      // 
-      this.label25.AutoSize = true;
-      this.label25.Location = new System.Drawing.Point(17, 44);
-      this.label25.Name = "label25";
-      this.label25.Size = new System.Drawing.Size(36, 15);
-      this.label25.TabIndex = 23;
-      this.label25.Text = "Index";
-      // 
       // btnDeleteBook
       // 
-      this.btnDeleteBook.Location = new System.Drawing.Point(276, 253);
+      this.btnDeleteBook.Location = new System.Drawing.Point(288, 253);
       this.btnDeleteBook.Name = "btnDeleteBook";
-      this.btnDeleteBook.Size = new System.Drawing.Size(75, 23);
+      this.btnDeleteBook.Size = new System.Drawing.Size(63, 23);
       this.btnDeleteBook.TabIndex = 22;
       this.btnDeleteBook.Text = "Delete";
       this.btnDeleteBook.UseVisualStyleBackColor = true;
@@ -462,9 +446,9 @@
       // 
       // btnUpdateBook
       // 
-      this.btnUpdateBook.Location = new System.Drawing.Point(195, 253);
+      this.btnUpdateBook.Location = new System.Drawing.Point(219, 253);
       this.btnUpdateBook.Name = "btnUpdateBook";
-      this.btnUpdateBook.Size = new System.Drawing.Size(75, 23);
+      this.btnUpdateBook.Size = new System.Drawing.Size(63, 23);
       this.btnUpdateBook.TabIndex = 21;
       this.btnUpdateBook.Text = "Update";
       this.btnUpdateBook.UseVisualStyleBackColor = true;
@@ -476,6 +460,7 @@
       this.textBoxBookCode.Name = "textBoxBookCode";
       this.textBoxBookCode.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookCode.TabIndex = 20;
+      this.textBoxBookCode.TextChanged += new System.EventHandler(this.textBoxBookCode_TextChanged);
       // 
       // label12
       // 
@@ -648,30 +633,14 @@
       // 
       // btnAddMember
       // 
-      this.btnAddMember.Location = new System.Drawing.Point(271, 303);
+      this.btnAddMember.Enabled = false;
+      this.btnAddMember.Location = new System.Drawing.Point(142, 274);
       this.btnAddMember.Name = "btnAddMember";
-      this.btnAddMember.Size = new System.Drawing.Size(75, 23);
+      this.btnAddMember.Size = new System.Drawing.Size(65, 23);
       this.btnAddMember.TabIndex = 42;
       this.btnAddMember.Text = "Add";
       this.btnAddMember.UseVisualStyleBackColor = true;
       this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
-      // 
-      // textBoxMemberIndex
-      // 
-      this.textBoxMemberIndex.Location = new System.Drawing.Point(142, 39);
-      this.textBoxMemberIndex.Name = "textBoxMemberIndex";
-      this.textBoxMemberIndex.ReadOnly = true;
-      this.textBoxMemberIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxMemberIndex.TabIndex = 41;
-      // 
-      // label26
-      // 
-      this.label26.AutoSize = true;
-      this.label26.Location = new System.Drawing.Point(12, 42);
-      this.label26.Name = "label26";
-      this.label26.Size = new System.Drawing.Size(36, 15);
-      this.label26.TabIndex = 40;
-      this.label26.Text = "Index";
       // 
       // textBoxMemberCheckedOutBooks
       // 
@@ -707,9 +676,9 @@
       // 
       // btnDeleteMember
       // 
-      this.btnDeleteMember.Location = new System.Drawing.Point(271, 274);
+      this.btnDeleteMember.Location = new System.Drawing.Point(281, 274);
       this.btnDeleteMember.Name = "btnDeleteMember";
-      this.btnDeleteMember.Size = new System.Drawing.Size(75, 23);
+      this.btnDeleteMember.Size = new System.Drawing.Size(65, 23);
       this.btnDeleteMember.TabIndex = 35;
       this.btnDeleteMember.Text = "Delete";
       this.btnDeleteMember.UseVisualStyleBackColor = true;
@@ -717,9 +686,9 @@
       // 
       // btnUpdateMember
       // 
-      this.btnUpdateMember.Location = new System.Drawing.Point(190, 274);
+      this.btnUpdateMember.Location = new System.Drawing.Point(213, 274);
       this.btnUpdateMember.Name = "btnUpdateMember";
-      this.btnUpdateMember.Size = new System.Drawing.Size(75, 23);
+      this.btnUpdateMember.Size = new System.Drawing.Size(65, 23);
       this.btnUpdateMember.TabIndex = 34;
       this.btnUpdateMember.Text = "Update";
       this.btnUpdateMember.UseVisualStyleBackColor = true;
@@ -823,6 +792,40 @@
       this.OptionPage.Text = "Options";
       this.OptionPage.UseVisualStyleBackColor = true;
       // 
+      // textBoxMemberIndex
+      // 
+      this.textBoxMemberIndex.Location = new System.Drawing.Point(142, 39);
+      this.textBoxMemberIndex.Name = "textBoxMemberIndex";
+      this.textBoxMemberIndex.ReadOnly = true;
+      this.textBoxMemberIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberIndex.TabIndex = 41;
+      // 
+      // label26
+      // 
+      this.label26.AutoSize = true;
+      this.label26.Location = new System.Drawing.Point(12, 42);
+      this.label26.Name = "label26";
+      this.label26.Size = new System.Drawing.Size(36, 15);
+      this.label26.TabIndex = 40;
+      this.label26.Text = "Index";
+      // 
+      // label25
+      // 
+      this.label25.AutoSize = true;
+      this.label25.Location = new System.Drawing.Point(17, 44);
+      this.label25.Name = "label25";
+      this.label25.Size = new System.Drawing.Size(36, 15);
+      this.label25.TabIndex = 23;
+      this.label25.Text = "Index";
+      // 
+      // textBoxBookIndex
+      // 
+      this.textBoxBookIndex.Location = new System.Drawing.Point(147, 41);
+      this.textBoxBookIndex.Name = "textBoxBookIndex";
+      this.textBoxBookIndex.ReadOnly = true;
+      this.textBoxBookIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookIndex.TabIndex = 24;
+      // 
       // LibraryManager
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -912,8 +915,6 @@
     private TextBox textBoxMemberCheckedOutBooks;
     private Label label24;
     private Button btnFindBooks;
-    private TextBox textBoxMemberIndex;
-    private Label label26;
     private Label label28;
     private Label labelNoResult;
     private TabControl tabControl3;
@@ -923,8 +924,6 @@
     private TextBox textBox1;
     private Label label27;
     private Label labelHandleBookStatus;
-    private TextBox textBoxBookIndex;
-    private Label label25;
     private Button btnDeleteBook;
     private Button btnUpdateBook;
     private TextBox textBoxBookCode;
@@ -941,5 +940,9 @@
     private Button btnAddBook;
     private Button btnAddMember;
     private Label labelHandleMemberStatus;
+    private TextBox textBoxBookIndex;
+    private Label label25;
+    private TextBox textBoxMemberIndex;
+    private Label label26;
   }
 }

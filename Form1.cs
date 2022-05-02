@@ -2,20 +2,16 @@ using Jayremnt.Winform;
 
 namespace librarymanager {
   public partial class LibraryManager : Form {
-    private Book[] books = new Book[1000];
-    private Member[] members = new Member[1000];
-    private int booksLength = 0;
-    private int membersLength = 0;
+    private List<Book> books = new List<Book>();
+    private List<Member> members = new List<Member>();
 
     public LibraryManager() {
       InitializeComponent();
     }
 
     private void Form1_Load(object sender, EventArgs e) {
-      books[0] = new Book(1, "Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "GW1001");
-      booksLength++;
-      members[0] = new Member(1, "Bao", "20/06/2003", "GCH210135", "GCH1006", "545342", "432423423", "GW1111 GW2222");
-      membersLength++;
+      books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "GW1001"));
+      members.Add(new Member("Bao", "20/06/2003", "GCH210135", "GCH1006", "545342", "432423423", "GW1111 GW2222"));
 
       dataGridViewBooks.DataSource = books;
       dataGridViewMembers.DataSource = members;
@@ -27,7 +23,7 @@ namespace librarymanager {
     private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e) {
       if (e.RowIndex >= 0) {
         DataGridViewRow row = this.dataGridViewBooks.Rows[e.RowIndex];
-        textBoxBookIndex.Text = row.Cells["Index"].Value.ToString();
+        textBoxBookIndex.Text = (e.RowIndex + 1).ToString();
         textBoxBookTitle.Text = row.Cells["Title"].Value.ToString();
         textBoxBookAuthor.Text = row.Cells["Author"].Value.ToString();
         textBoxBookPublicationDate.Text = row.Cells["PublicationDate"].Value.ToString();
@@ -38,7 +34,7 @@ namespace librarymanager {
     private void dataGridViewMembers_CellContentClick(object sender, DataGridViewCellEventArgs e) {
       if (e.RowIndex >= 0) {
         DataGridViewRow row = this.dataGridViewMembers.Rows[e.RowIndex];
-        textBoxMemberIndex.Text = row.Cells["Index"].Value.ToString();
+        textBoxMemberIndex.Text = (e.RowIndex + 1).ToString();
         textBoxMemberName.Text = row.Cells["Name"].Value.ToString();
         textBoxMemberDateOfBirth.Text = row.Cells["DateOfBirth"].Value.ToString();
         textBoxMemberStudentID.Text = row.Cells["StudentID"].Value.ToString();
@@ -58,20 +54,20 @@ namespace librarymanager {
       string code = textBoxBookCode.Text;
 
       if (books[index - 1].Code != code) {
-        if (new Book().IsBookExists(books, booksLength, code)) {
+        if (new Book().IsBookExists(books, code)) {
           labelHandleBookStatus.Text = "* Book exists";
           labelHandleBookStatus.Visible = true;
           labelHandleBookStatus.ForeColor = Color.Red;
         }
         else {
-          books[index - 1] = new Book(index, title, author, publicationDate, category, code);
+          books[index - 1] = new Book(title, author, publicationDate, category, code);
           labelHandleBookStatus.Text = "* Updated book";
           labelHandleBookStatus.Visible = true;
           labelHandleBookStatus.ForeColor = Color.Blue;
         }
       }
       else {
-        books[index - 1] = new Book(index, title, author, publicationDate, category, code);
+        books[index - 1] = new Book(title, author, publicationDate, category, code);
         labelHandleBookStatus.Text = "* Updated book";
         labelHandleBookStatus.Visible = true;
         labelHandleBookStatus.ForeColor = Color.Blue;
@@ -80,13 +76,13 @@ namespace librarymanager {
     }
     private void btnDeleteBook_Click(object sender, EventArgs e) {
       int bookIndex = Int32.Parse(textBoxBookIndex.Text) - 1;
-      books = books.Where((val, index) => index != bookIndex).ToArray();
+      books.RemoveAt(bookIndex);
       dataGridViewBooks.DataSource = books;
       dataGridViewBooks.Refresh();
     }
     private void btnDeleteMember_Click(object sender, EventArgs e) {
       int memberIndex = Int32.Parse(textBoxMemberIndex.Text) - 1;
-      members = members.Where((val, index) => index != memberIndex).ToArray();
+      members.RemoveAt(memberIndex);
       dataGridViewMembers.DataSource = members;
       dataGridViewMembers.Refresh();
     }
@@ -105,7 +101,7 @@ namespace librarymanager {
       }
       else {
         // add book
-        if (new Book().IsBookExists(books, booksLength, code)) {
+        if (new Book().IsBookExists(books, code)) {
           labelHandleBookStatus.Text = "* Book exists";
           labelHandleBookStatus.Visible = true;
           labelHandleBookStatus.ForeColor = Color.Red;
@@ -114,7 +110,7 @@ namespace librarymanager {
           labelHandleBookStatus.Text = "* Successfully added new book!";
           labelHandleBookStatus.Visible = true;
           labelHandleBookStatus.ForeColor = Color.Blue;
-          books[booksLength] = new Book(++booksLength, title, author, publicationDate, category, code);
+          books.Add(new Book(title, author, publicationDate, category, code));
           dataGridViewBooks.Refresh();
         }
       }
@@ -136,12 +132,12 @@ namespace librarymanager {
       }
       else {
         // add member
-        if (new Member().IsMemberExists(members, membersLength, studentID)) {
+        if (new Member().IsMemberExists(members, studentID)) {
           labelHandleMemberStatus.Text = "* Member exists";
           labelHandleMemberStatus.Visible = true;
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
-        else if (new Book().IsBooksCheckedOut(books, booksLength, checkedOutBooks)) {
+        else if (new Book().IsBooksCheckedOut(books, checkedOutBooks)) {
           labelHandleMemberStatus.Text = "* Some books were checked out.";
           labelHandleMemberStatus.Visible = true;
           labelHandleMemberStatus.ForeColor = Color.Red;
@@ -150,7 +146,7 @@ namespace librarymanager {
           labelHandleMemberStatus.Text = "* Successfully added new member!";
           labelHandleMemberStatus.Visible = true;
           labelHandleMemberStatus.ForeColor = Color.Blue;
-          members[membersLength] = new Member(++membersLength, name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks);
+          members.Add(new Member(name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks));
           dataGridViewMembers.Refresh();
         }
       }
@@ -162,7 +158,7 @@ namespace librarymanager {
       string bookCategory = textBoxFindBooksByCategory.Text;
       string bookPublicationDate = textBoxFindBooksByPublicationDate.Text;
 
-      List<Book> results = new Book().findBooks(books, booksLength, bookTitle, bookAuthor, bookCategory, bookPublicationDate);
+      List<Book> results = new Book().findBooks(books, bookTitle, bookAuthor, bookCategory, bookPublicationDate);
 
       if (results.Count > 0) {
         labelNoResult.Visible = false;
@@ -174,6 +170,21 @@ namespace librarymanager {
         labelNoResult.Visible = true;
         dataGridViewFindBooks.Visible = false;
         dataGridViewFindBooks.Refresh();
+      }
+    }
+
+    private void textBoxBookCode_TextChanged(object sender, EventArgs e) {
+      string bookCode = textBoxBookCode.Text;
+      if (!string.IsNullOrEmpty(bookCode)) {
+        if (!(new Book().IsBookExists(books, bookCode))) {
+          btnAddBook.Enabled = true;
+        }
+        else {
+          btnAddBook.Enabled = false;
+        }
+      }
+      else {
+        btnAddBook.Enabled = false;
       }
     }
   }

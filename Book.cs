@@ -2,7 +2,6 @@
 
 namespace Jayremnt.Winform {
   public partial class Book {
-    private int index;
     private string title;
     private string author;
     private string publicationDate;
@@ -10,19 +9,13 @@ namespace Jayremnt.Winform {
     private string code;
     private string status;
 
-    public Book(int Index = 0, string Title = "", string Author = "", string PublicationDate = "", string Category = "", string Code = "", string Status = "Available") {
+    public Book(string Title = "", string Author = "", string PublicationDate = "", string Category = "", string Code = "", string Status = "Available") {
       this.author = Author;
       this.publicationDate = PublicationDate;
       this.category = Category;
       this.code = Code;
-      this.index = Index;
       this.title = Title;
       this.status = Status;
-    }
-
-    public int Index {
-      get { return index; }
-      set { index = value; }
     }
 
     public string Title {
@@ -55,10 +48,10 @@ namespace Jayremnt.Winform {
       set { status = value; }
     }
 
-    public bool IsBookExists(Book[] books, int booksLength, string BookCode) {
+    public bool IsBookExists(List<Book> books, string BookCode) {
       bool isBookExists = false;
 
-      for (int i = 0; i < booksLength; i++) {
+      for (int i = 0; i < books.Count(); i++) {
         if (books[i].Code == BookCode) {
           isBookExists = true;
           break;
@@ -68,11 +61,11 @@ namespace Jayremnt.Winform {
       return isBookExists;
     }
 
-    public bool IsBooksCheckedOut(Book[] books, int booksLength, string booksToCheckedOut) {
+    public bool IsBooksCheckedOut(List<Book> books, string booksToCheckedOut) {
       string[] subs = booksToCheckedOut.Split(' ');
 
       for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < booksLength; j++) {
+        for (int j = 0; j < books.Count(); j++) {
           if (subs[i].ToLower() == books[j].Code.ToLower()) {
             if (books[j].status == "Checked out") return true;
           }
@@ -82,11 +75,11 @@ namespace Jayremnt.Winform {
       return false;
     }
 
-    public Book[] checkOutBooks(Book[] books, int booksLength, string booksToCheckedOut) {
+    public List<Book> checkOutBooks(List<Book> books, string booksToCheckedOut) {
       string[] subs = booksToCheckedOut.Split(' ');
 
       for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < booksLength; j++) {
+        for (int j = 0; j < books.Count(); j++) {
           if (subs[i].ToLower() == books[j].Code.ToLower()) {
             books[j].status = "Checked out";
             break;
@@ -97,11 +90,11 @@ namespace Jayremnt.Winform {
       return books;
     }
 
-    public Book[] returnBooks(Book[] books, int booksLength, string booksToReturn) {
+    public List<Book> returnBooks(List<Book> books, string booksToReturn) {
       string[] subs = booksToReturn.Split(' ');
 
       for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < booksLength; j++) {
+        for (int j = 0; j < books.Count(); j++) {
           if (subs[i].ToLower() == books[j].Code.ToLower()) {
             books[j].status = "Available";
             break;
@@ -112,10 +105,10 @@ namespace Jayremnt.Winform {
       return books;
     }
 
-    public List<Book> findBooks(Book[] books, int booksLength, string titleKey = "", string authorKey = "", string categoryKey = "", string publicationDateKey = "") {
+    public List<Book> findBooks(List<Book> books, string titleKey = "", string authorKey = "", string categoryKey = "", string publicationDateKey = "") {
       List<Book> results = new List<Book>();
 
-      for (int i = 0; i < booksLength; i++) {
+      for (int i = 0; i < books.Count(); i++) {
         if (books[i].Title.ToLower().Contains(titleKey.ToLower())
           && books[i].Author.ToLower().Contains(authorKey.ToLower())
           && books[i].Category.ToLower().Contains(categoryKey.ToLower())
