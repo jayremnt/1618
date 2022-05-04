@@ -52,10 +52,14 @@
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.splitContainer2 = new System.Windows.Forms.SplitContainer();
       this.dataGridViewBooks = new System.Windows.Forms.DataGridView();
+      this.textBoxBookBorrower = new System.Windows.Forms.TextBox();
+      this.labelBookBorrower = new System.Windows.Forms.Label();
       this.btnAddBook = new System.Windows.Forms.Button();
-      this.textBox1 = new System.Windows.Forms.TextBox();
+      this.textBoxBookStatus = new System.Windows.Forms.TextBox();
       this.label27 = new System.Windows.Forms.Label();
       this.labelHandleBookStatus = new System.Windows.Forms.Label();
+      this.textBoxBookIndex = new System.Windows.Forms.TextBox();
+      this.label25 = new System.Windows.Forms.Label();
       this.btnDeleteBook = new System.Windows.Forms.Button();
       this.btnUpdateBook = new System.Windows.Forms.Button();
       this.textBoxBookCode = new System.Windows.Forms.TextBox();
@@ -76,6 +80,8 @@
       this.dataGridViewMembers = new System.Windows.Forms.DataGridView();
       this.labelHandleMemberStatus = new System.Windows.Forms.Label();
       this.btnAddMember = new System.Windows.Forms.Button();
+      this.textBoxMemberIndex = new System.Windows.Forms.TextBox();
+      this.label26 = new System.Windows.Forms.Label();
       this.textBoxMemberCheckedOutBooks = new System.Windows.Forms.TextBox();
       this.label24 = new System.Windows.Forms.Label();
       this.textBoxMemberDateOfBirth = new System.Windows.Forms.TextBox();
@@ -94,10 +100,6 @@
       this.label21 = new System.Windows.Forms.Label();
       this.label22 = new System.Windows.Forms.Label();
       this.OptionPage = new System.Windows.Forms.TabPage();
-      this.textBoxMemberIndex = new System.Windows.Forms.TextBox();
-      this.label26 = new System.Windows.Forms.Label();
-      this.label25 = new System.Windows.Forms.Label();
-      this.textBoxBookIndex = new System.Windows.Forms.TextBox();
       this.tabControl1.SuspendLayout();
       this.findBookPage.SuspendLayout();
       this.groupBox1.SuspendLayout();
@@ -365,8 +367,10 @@
       // 
       // splitContainer2.Panel2
       // 
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookBorrower);
+      this.splitContainer2.Panel2.Controls.Add(this.labelBookBorrower);
       this.splitContainer2.Panel2.Controls.Add(this.btnAddBook);
-      this.splitContainer2.Panel2.Controls.Add(this.textBox1);
+      this.splitContainer2.Panel2.Controls.Add(this.textBoxBookStatus);
       this.splitContainer2.Panel2.Controls.Add(this.label27);
       this.splitContainer2.Panel2.Controls.Add(this.labelHandleBookStatus);
       this.splitContainer2.Panel2.Controls.Add(this.textBoxBookIndex);
@@ -391,17 +395,33 @@
       // dataGridViewBooks
       // 
       this.dataGridViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-      this.dataGridViewBooks.Location = new System.Drawing.Point(3, 3);
+      this.dataGridViewBooks.Location = new System.Drawing.Point(0, 0);
       this.dataGridViewBooks.Name = "dataGridViewBooks";
       this.dataGridViewBooks.RowTemplate.Height = 25;
-      this.dataGridViewBooks.Size = new System.Drawing.Size(564, 444);
+      this.dataGridViewBooks.Size = new System.Drawing.Size(567, 452);
       this.dataGridViewBooks.TabIndex = 0;
       this.dataGridViewBooks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBooks_CellContentClick);
       // 
+      // textBoxBookBorrower
+      // 
+      this.textBoxBookBorrower.Enabled = false;
+      this.textBoxBookBorrower.Location = new System.Drawing.Point(147, 98);
+      this.textBoxBookBorrower.Name = "textBoxBookBorrower";
+      this.textBoxBookBorrower.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookBorrower.TabIndex = 30;
+      // 
+      // labelBookBorrower
+      // 
+      this.labelBookBorrower.AutoSize = true;
+      this.labelBookBorrower.Location = new System.Drawing.Point(17, 101);
+      this.labelBookBorrower.Name = "labelBookBorrower";
+      this.labelBookBorrower.Size = new System.Drawing.Size(55, 15);
+      this.labelBookBorrower.TabIndex = 29;
+      this.labelBookBorrower.Text = "Borrower";
+      // 
       // btnAddBook
       // 
-      this.btnAddBook.Enabled = false;
-      this.btnAddBook.Location = new System.Drawing.Point(147, 253);
+      this.btnAddBook.Location = new System.Drawing.Point(147, 272);
       this.btnAddBook.Name = "btnAddBook";
       this.btnAddBook.Size = new System.Drawing.Size(63, 23);
       this.btnAddBook.TabIndex = 28;
@@ -409,17 +429,18 @@
       this.btnAddBook.UseVisualStyleBackColor = true;
       this.btnAddBook.Click += new System.EventHandler(this.btnAddBook_Click);
       // 
-      // textBox1
+      // textBoxBookStatus
       // 
-      this.textBox1.Location = new System.Drawing.Point(147, 214);
-      this.textBox1.Name = "textBox1";
-      this.textBox1.Size = new System.Drawing.Size(204, 23);
-      this.textBox1.TabIndex = 27;
+      this.textBoxBookStatus.Enabled = false;
+      this.textBoxBookStatus.Location = new System.Drawing.Point(147, 69);
+      this.textBoxBookStatus.Name = "textBoxBookStatus";
+      this.textBoxBookStatus.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookStatus.TabIndex = 27;
       // 
       // label27
       // 
       this.label27.AutoSize = true;
-      this.label27.Location = new System.Drawing.Point(17, 217);
+      this.label27.Location = new System.Drawing.Point(17, 72);
       this.label27.Name = "label27";
       this.label27.Size = new System.Drawing.Size(39, 15);
       this.label27.TabIndex = 26;
@@ -428,15 +449,32 @@
       // labelHandleBookStatus
       // 
       this.labelHandleBookStatus.AutoSize = true;
-      this.labelHandleBookStatus.Location = new System.Drawing.Point(17, 290);
+      this.labelHandleBookStatus.Location = new System.Drawing.Point(17, 309);
       this.labelHandleBookStatus.Name = "labelHandleBookStatus";
       this.labelHandleBookStatus.Size = new System.Drawing.Size(0, 15);
       this.labelHandleBookStatus.TabIndex = 25;
-      this.labelHandleBookStatus.Visible = false;
+      // 
+      // textBoxBookIndex
+      // 
+      this.textBoxBookIndex.Enabled = false;
+      this.textBoxBookIndex.Location = new System.Drawing.Point(147, 41);
+      this.textBoxBookIndex.Name = "textBoxBookIndex";
+      this.textBoxBookIndex.ReadOnly = true;
+      this.textBoxBookIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxBookIndex.TabIndex = 24;
+      // 
+      // label25
+      // 
+      this.label25.AutoSize = true;
+      this.label25.Location = new System.Drawing.Point(17, 44);
+      this.label25.Name = "label25";
+      this.label25.Size = new System.Drawing.Size(36, 15);
+      this.label25.TabIndex = 23;
+      this.label25.Text = "Index";
       // 
       // btnDeleteBook
       // 
-      this.btnDeleteBook.Location = new System.Drawing.Point(288, 253);
+      this.btnDeleteBook.Location = new System.Drawing.Point(288, 272);
       this.btnDeleteBook.Name = "btnDeleteBook";
       this.btnDeleteBook.Size = new System.Drawing.Size(63, 23);
       this.btnDeleteBook.TabIndex = 22;
@@ -446,7 +484,7 @@
       // 
       // btnUpdateBook
       // 
-      this.btnUpdateBook.Location = new System.Drawing.Point(219, 253);
+      this.btnUpdateBook.Location = new System.Drawing.Point(219, 272);
       this.btnUpdateBook.Name = "btnUpdateBook";
       this.btnUpdateBook.Size = new System.Drawing.Size(63, 23);
       this.btnUpdateBook.TabIndex = 21;
@@ -456,16 +494,15 @@
       // 
       // textBoxBookCode
       // 
-      this.textBoxBookCode.Location = new System.Drawing.Point(147, 185);
+      this.textBoxBookCode.Location = new System.Drawing.Point(147, 243);
       this.textBoxBookCode.Name = "textBoxBookCode";
       this.textBoxBookCode.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookCode.TabIndex = 20;
-      this.textBoxBookCode.TextChanged += new System.EventHandler(this.textBoxBookCode_TextChanged);
       // 
       // label12
       // 
       this.label12.AutoSize = true;
-      this.label12.Location = new System.Drawing.Point(17, 188);
+      this.label12.Location = new System.Drawing.Point(17, 246);
       this.label12.Name = "label12";
       this.label12.Size = new System.Drawing.Size(35, 15);
       this.label12.TabIndex = 19;
@@ -473,7 +510,7 @@
       // 
       // textBoxBookCategory
       // 
-      this.textBoxBookCategory.Location = new System.Drawing.Point(147, 156);
+      this.textBoxBookCategory.Location = new System.Drawing.Point(147, 214);
       this.textBoxBookCategory.Name = "textBoxBookCategory";
       this.textBoxBookCategory.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookCategory.TabIndex = 18;
@@ -481,7 +518,7 @@
       // label13
       // 
       this.label13.AutoSize = true;
-      this.label13.Location = new System.Drawing.Point(17, 159);
+      this.label13.Location = new System.Drawing.Point(17, 217);
       this.label13.Name = "label13";
       this.label13.Size = new System.Drawing.Size(55, 15);
       this.label13.TabIndex = 17;
@@ -489,7 +526,7 @@
       // 
       // textBoxBookPublicationDate
       // 
-      this.textBoxBookPublicationDate.Location = new System.Drawing.Point(147, 127);
+      this.textBoxBookPublicationDate.Location = new System.Drawing.Point(147, 185);
       this.textBoxBookPublicationDate.Name = "textBoxBookPublicationDate";
       this.textBoxBookPublicationDate.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookPublicationDate.TabIndex = 16;
@@ -497,7 +534,7 @@
       // label14
       // 
       this.label14.AutoSize = true;
-      this.label14.Location = new System.Drawing.Point(17, 130);
+      this.label14.Location = new System.Drawing.Point(17, 188);
       this.label14.Name = "label14";
       this.label14.Size = new System.Drawing.Size(94, 15);
       this.label14.TabIndex = 15;
@@ -505,7 +542,7 @@
       // 
       // textBoxBookAuthor
       // 
-      this.textBoxBookAuthor.Location = new System.Drawing.Point(147, 98);
+      this.textBoxBookAuthor.Location = new System.Drawing.Point(147, 156);
       this.textBoxBookAuthor.Name = "textBoxBookAuthor";
       this.textBoxBookAuthor.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookAuthor.TabIndex = 14;
@@ -513,7 +550,7 @@
       // label15
       // 
       this.label15.AutoSize = true;
-      this.label15.Location = new System.Drawing.Point(17, 101);
+      this.label15.Location = new System.Drawing.Point(17, 159);
       this.label15.Name = "label15";
       this.label15.Size = new System.Drawing.Size(44, 15);
       this.label15.TabIndex = 13;
@@ -521,7 +558,7 @@
       // 
       // textBoxBookTitle
       // 
-      this.textBoxBookTitle.Location = new System.Drawing.Point(147, 69);
+      this.textBoxBookTitle.Location = new System.Drawing.Point(147, 127);
       this.textBoxBookTitle.Name = "textBoxBookTitle";
       this.textBoxBookTitle.Size = new System.Drawing.Size(204, 23);
       this.textBoxBookTitle.TabIndex = 12;
@@ -529,7 +566,7 @@
       // label16
       // 
       this.label16.AutoSize = true;
-      this.label16.Location = new System.Drawing.Point(17, 72);
+      this.label16.Location = new System.Drawing.Point(17, 130);
       this.label16.Name = "label16";
       this.label16.Size = new System.Drawing.Size(29, 15);
       this.label16.TabIndex = 11;
@@ -629,11 +666,9 @@
       this.labelHandleMemberStatus.Name = "labelHandleMemberStatus";
       this.labelHandleMemberStatus.Size = new System.Drawing.Size(0, 15);
       this.labelHandleMemberStatus.TabIndex = 43;
-      this.labelHandleMemberStatus.Visible = false;
       // 
       // btnAddMember
       // 
-      this.btnAddMember.Enabled = false;
       this.btnAddMember.Location = new System.Drawing.Point(142, 274);
       this.btnAddMember.Name = "btnAddMember";
       this.btnAddMember.Size = new System.Drawing.Size(65, 23);
@@ -641,6 +676,23 @@
       this.btnAddMember.Text = "Add";
       this.btnAddMember.UseVisualStyleBackColor = true;
       this.btnAddMember.Click += new System.EventHandler(this.btnAddMember_Click);
+      // 
+      // textBoxMemberIndex
+      // 
+      this.textBoxMemberIndex.Location = new System.Drawing.Point(142, 39);
+      this.textBoxMemberIndex.Name = "textBoxMemberIndex";
+      this.textBoxMemberIndex.ReadOnly = true;
+      this.textBoxMemberIndex.Size = new System.Drawing.Size(204, 23);
+      this.textBoxMemberIndex.TabIndex = 41;
+      // 
+      // label26
+      // 
+      this.label26.AutoSize = true;
+      this.label26.Location = new System.Drawing.Point(12, 42);
+      this.label26.Name = "label26";
+      this.label26.Size = new System.Drawing.Size(36, 15);
+      this.label26.TabIndex = 40;
+      this.label26.Text = "Index";
       // 
       // textBoxMemberCheckedOutBooks
       // 
@@ -692,6 +744,7 @@
       this.btnUpdateMember.TabIndex = 34;
       this.btnUpdateMember.Text = "Update";
       this.btnUpdateMember.UseVisualStyleBackColor = true;
+      this.btnUpdateMember.Click += new System.EventHandler(this.btnUpdateMember_Click);
       // 
       // textBoxMemberEmail
       // 
@@ -792,40 +845,6 @@
       this.OptionPage.Text = "Options";
       this.OptionPage.UseVisualStyleBackColor = true;
       // 
-      // textBoxMemberIndex
-      // 
-      this.textBoxMemberIndex.Location = new System.Drawing.Point(142, 39);
-      this.textBoxMemberIndex.Name = "textBoxMemberIndex";
-      this.textBoxMemberIndex.ReadOnly = true;
-      this.textBoxMemberIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxMemberIndex.TabIndex = 41;
-      // 
-      // label26
-      // 
-      this.label26.AutoSize = true;
-      this.label26.Location = new System.Drawing.Point(12, 42);
-      this.label26.Name = "label26";
-      this.label26.Size = new System.Drawing.Size(36, 15);
-      this.label26.TabIndex = 40;
-      this.label26.Text = "Index";
-      // 
-      // label25
-      // 
-      this.label25.AutoSize = true;
-      this.label25.Location = new System.Drawing.Point(17, 44);
-      this.label25.Name = "label25";
-      this.label25.Size = new System.Drawing.Size(36, 15);
-      this.label25.TabIndex = 23;
-      this.label25.Text = "Index";
-      // 
-      // textBoxBookIndex
-      // 
-      this.textBoxBookIndex.Location = new System.Drawing.Point(147, 41);
-      this.textBoxBookIndex.Name = "textBoxBookIndex";
-      this.textBoxBookIndex.ReadOnly = true;
-      this.textBoxBookIndex.Size = new System.Drawing.Size(204, 23);
-      this.textBoxBookIndex.TabIndex = 24;
-      // 
       // LibraryManager
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -920,8 +939,7 @@
     private TabControl tabControl3;
     private TabPage tabPage3;
     private SplitContainer splitContainer2;
-    private DataGridView dataGridViewBooks;
-    private TextBox textBox1;
+    private TextBox textBoxBookStatus;
     private Label label27;
     private Label labelHandleBookStatus;
     private Button btnDeleteBook;
@@ -944,5 +962,8 @@
     private Label label25;
     private TextBox textBoxMemberIndex;
     private Label label26;
+    private DataGridView dataGridViewBooks;
+    private TextBox textBoxBookBorrower;
+    private Label labelBookBorrower;
   }
 }

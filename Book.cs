@@ -8,14 +8,16 @@ namespace Jayremnt.Winform {
     private string category;
     private string code;
     private string status;
+    private string borrower;
 
-    public Book(string Title = "", string Author = "", string PublicationDate = "", string Category = "", string Code = "", string Status = "Available") {
+    public Book(string Title = "", string Author = "", string PublicationDate = "", string Category = "", string Code = "", string Status = "Available", string Borrower = "None") {
       this.author = Author;
       this.publicationDate = PublicationDate;
       this.category = Category;
       this.code = Code;
       this.title = Title;
       this.status = Status;
+      this.borrower = Borrower;
     }
 
     public string Title {
@@ -48,26 +50,46 @@ namespace Jayremnt.Winform {
       set { status = value; }
     }
 
-    public bool IsBookExists(List<Book> books, string BookCode) {
-      bool isBookExists = false;
-
-      for (int i = 0; i < books.Count(); i++) {
-        if (books[i].Code == BookCode) {
-          isBookExists = true;
-          break;
-        }
-      }
-
-      return isBookExists;
+    public string Borrower {
+      get { return borrower; }
+      set { borrower = value; }
     }
 
-    public bool IsBooksCheckedOut(List<Book> books, string booksToCheckedOut) {
+    public bool IsBooksExists(List<Book> books, string bookCodesToCheck) {
+      if (bookCodesToCheck == null || bookCodesToCheck == "") return true;
+
+      string[] bookCodes = bookCodesToCheck.Split(' ');
+
+      bool isBookExists = false;
+      for (int i = 0; i < bookCodes.Count(); i++) {
+        for (int j = 0; j < books.Count(); j++) {
+          if (books[j].Code == bookCodes[i]) {
+            isBookExists = true;
+            break;
+          }
+        }
+
+        if (isBookExists) {
+          isBookExists = false;
+          break;
+        }
+        else return false;
+      }
+
+      return true;
+    }
+
+    public bool IsBooksCheckedOut(List<Book> books, string booksToCheckedOut, string exceptionBorrower = "") {
       string[] subs = booksToCheckedOut.Split(' ');
 
       for (int i = 0; i < subs.Count(); i++) {
         for (int j = 0; j < books.Count(); j++) {
           if (subs[i].ToLower() == books[j].Code.ToLower()) {
-            if (books[j].status == "Checked out") return true;
+            if (books[j].status == "Checked out") { 
+              if (exceptionBorrower != "" && books[j].borrower != exceptionBorrower) {
+                return true;
+              }
+            }
           }
         }
       }
@@ -75,28 +97,18 @@ namespace Jayremnt.Winform {
       return false;
     }
 
-    public List<Book> checkOutBooks(List<Book> books, string booksToCheckedOut) {
-      string[] subs = booksToCheckedOut.Split(' ');
+    public List<Book> checkOutBooks(List<Book> books, string booksToCheckedOut, string borrower) {
+      string[] checkedOutBooks = booksToCheckedOut.Split(' ');
 
-      for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < books.Count(); j++) {
-          if (subs[i].ToLower() == books[j].Code.ToLower()) {
+      for (int i = 0; i < books.Count(); i++) {
+        // First, return books checked out by this borrower 
+        if (books[i].borrower == borrower) books[i].status = "Available";
+        
+        // Check out book
+        for (int j = 0; j < checkedOutBooks.Count(); j++) {
+          if (checkedOutBooks[j].ToLower() == books[i].Code.ToLower()) {
             books[j].status = "Checked out";
-            break;
-          }
-        }
-      }
-
-      return books;
-    }
-
-    public List<Book> returnBooks(List<Book> books, string booksToReturn) {
-      string[] subs = booksToReturn.Split(' ');
-
-      for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < books.Count(); j++) {
-          if (subs[i].ToLower() == books[j].Code.ToLower()) {
-            books[j].status = "Available";
+            books[j].borrower = borrower;
             break;
           }
         }
