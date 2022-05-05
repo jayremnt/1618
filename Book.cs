@@ -55,40 +55,43 @@ namespace Jayremnt.Winform {
       set { borrower = value; }
     }
 
-    public bool IsBooksExists(List<Book> books, string bookCodesToCheck) {
+    public static bool IsBooksExists(List<Book> books, string bookCodesToCheck) {
       if (bookCodesToCheck == null || bookCodesToCheck == "") return true;
 
       string[] bookCodes = bookCodesToCheck.Split(' ');
 
       bool isBookExists = false;
-      for (int i = 0; i < bookCodes.Count(); i++) {
-        for (int j = 0; j < books.Count(); j++) {
+      for (int i = 0; i < bookCodes.Length; i++) {
+        for (int j = 0; j < books.Count; j++) {
           if (books[j].Code == bookCodes[i]) {
             isBookExists = true;
             break;
           }
         }
 
-        if (isBookExists) {
-          isBookExists = false;
-          break;
+        if (!isBookExists) {
+          return false;
         }
-        else return false;
+
+        isBookExists = false;
       }
 
       return true;
     }
 
-    public bool IsBooksCheckedOut(List<Book> books, string booksToCheckedOut, string exceptionBorrower = "") {
-      string[] subs = booksToCheckedOut.Split(' ');
+    public static bool IsBooksCheckedOut(List<Book> books, string booksToCheckedOut, string exceptionBorrower = "") {
+      string[] checkedBooks = booksToCheckedOut.Split(' ');
 
-      for (int i = 0; i < subs.Count(); i++) {
-        for (int j = 0; j < books.Count(); j++) {
-          if (subs[i].ToLower() == books[j].Code.ToLower()) {
-            if (books[j].status == "Checked out") { 
-              if (exceptionBorrower != "" && books[j].borrower != exceptionBorrower) {
-                return true;
+      for (int i = 0; i < checkedBooks.Length; i++) {
+        for (int j = 0; j < books.Count; j++) {
+          if (checkedBooks[i].ToLower() == books[j].Code.ToLower()) {
+            if (books[j].Status == "Checked out") {
+              if (exceptionBorrower != "") {
+                if (books[j].Borrower != exceptionBorrower) {
+                  return true;
+                }
               }
+              else return true;
             }
           }
         }
@@ -97,18 +100,21 @@ namespace Jayremnt.Winform {
       return false;
     }
 
-    public List<Book> checkOutBooks(List<Book> books, string booksToCheckedOut, string borrower) {
+    public static List<Book> CheckOutBooks(List<Book> books, string booksToCheckedOut, string borrower) {
       string[] checkedOutBooks = booksToCheckedOut.Split(' ');
 
-      for (int i = 0; i < books.Count(); i++) {
+      for (int i = 0; i < books.Count; i++) {
         // First, return books checked out by this borrower 
-        if (books[i].borrower == borrower) books[i].status = "Available";
+        if (books[i].Borrower == borrower) {
+          books[i].Status = "Available";
+          books[i].Borrower = "None";
+        }
         
         // Check out book
-        for (int j = 0; j < checkedOutBooks.Count(); j++) {
+        for (int j = 0; j < checkedOutBooks.Length; j++) {
           if (checkedOutBooks[j].ToLower() == books[i].Code.ToLower()) {
-            books[j].status = "Checked out";
-            books[j].borrower = borrower;
+            books[i].Status = "Checked out";
+            books[i].Borrower = borrower;
             break;
           }
         }
@@ -117,10 +123,10 @@ namespace Jayremnt.Winform {
       return books;
     }
 
-    public List<Book> findBooks(List<Book> books, string titleKey = "", string authorKey = "", string categoryKey = "", string publicationDateKey = "") {
-      List<Book> results = new List<Book>();
+    public static List<Book> FindBooks(List<Book> books, string titleKey = "", string authorKey = "", string categoryKey = "", string publicationDateKey = "") {
+      List<Book> results = new();
 
-      for (int i = 0; i < books.Count(); i++) {
+      for (int i = 0; i < books.Count; i++) {
         if (books[i].Title.ToLower().Contains(titleKey.ToLower())
           && books[i].Author.ToLower().Contains(authorKey.ToLower())
           && books[i].Category.ToLower().Contains(categoryKey.ToLower())

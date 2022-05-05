@@ -55,10 +55,10 @@ namespace Jayremnt.Winform {
       set { checkedOutBooks = value; }
     }
 
-    public bool IsMemberExists(List<Member> members, string memberStudentID) {
+    public static bool IsMemberExists(List<Member> members, string memberStudentID) {
       bool isMemberExists = false;
 
-      for (int i = 0; i < members.Count(); i++) {
+      for (int i = 0; i < members.Count; i++) {
         if (members[i].StudentID == memberStudentID) {
           isMemberExists = true;
           break;

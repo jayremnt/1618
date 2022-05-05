@@ -10,7 +10,12 @@ namespace librarymanager {
     }
 
     private void Form1_Load(object sender, EventArgs e) {
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "GW1001", "Available"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "1"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "2"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "3"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "4"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "5"));
+      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "6"));
       this.members.Add(new Member("Bao", "20/06/2003", "GCH210135", "GCH1006", "545342", "432423423"));
 
       this.RefreshDGVBooks();
@@ -60,7 +65,7 @@ namespace librarymanager {
         string status = textBoxBookStatus.Text;
         string borrower = textBoxBookBorrower.Text;
 
-        if (this.books[index - 1].Code != code && new Book().IsBooksExists(this.books, code)) {
+        if (this.books[index - 1].Code != code && Book.IsBooksExists(this.books, code)) {
           labelHandleBookStatus.Text = "* Book exists";
           labelHandleBookStatus.ForeColor = Color.Red;
         }
@@ -89,25 +94,26 @@ namespace librarymanager {
         string email = textBoxMemberEmail.Text;
         string checkedOutBooks = textBoxMemberCheckedOutBooks.Text;
 
-        if (this.members[index - 1].StudentID != studentID & new Member().IsMemberExists(this.members, studentID)) {
+        if (this.members[index - 1].StudentID != studentID && Member.IsMemberExists(this.members, studentID)) {
           labelHandleMemberStatus.Text = "* Member exists";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
-        else if (!new Book().IsBooksExists(this.books, checkedOutBooks)) {
+        else if (!Book.IsBooksExists(this.books, checkedOutBooks)) {
           labelHandleMemberStatus.Text = "* Some books do not exist";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
-        else if (new Book().IsBooksCheckedOut(this.books, checkedOutBooks, studentID)) {
+        else if (Book.IsBooksCheckedOut(this.books, checkedOutBooks, studentID)) {
           labelHandleMemberStatus.Text = "* Some books were checked out.";
           labelHandleMemberStatus.ForeColor = Color.Red;
         } 
         else {
-          this.books = new Book().checkOutBooks(this.books, checkedOutBooks, studentID);
+          this.books = Book.CheckOutBooks(this.books, checkedOutBooks, studentID);
           this.members[index - 1] = new Member(name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks);
           labelHandleMemberStatus.Text = "* Updated member";
           labelHandleMemberStatus.ForeColor = Color.Blue;
         }
 
+        this.RefreshDGVBooks();
         this.RefreshDGVMembers();
       }
       else {
@@ -136,6 +142,7 @@ namespace librarymanager {
         this.members.RemoveAt(memberIndex);
 
         this.RefreshDGVMembers();
+        this.RefreshDGVBooks();
         this.FillMemberTextBoxes();
       }
       else {
@@ -157,7 +164,7 @@ namespace librarymanager {
       }
       else {
         // add book
-        if (new Book().IsBooksExists(this.books, code)) {
+        if (Book.IsBooksExists(this.books, code)) {
           labelHandleBookStatus.Text = "* Book exists";
           labelHandleBookStatus.ForeColor = Color.Red;
         }
@@ -187,23 +194,25 @@ namespace librarymanager {
       }
       else {
         // add member
-        if (new Member().IsMemberExists(this.members, studentID)) {
+        if (Member.IsMemberExists(this.members, studentID)) {
           labelHandleMemberStatus.Text = "* Member exists";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
-        else if (!new Book().IsBooksExists(this.books, checkedOutBooks)) {
+        else if (!Book.IsBooksExists(this.books, checkedOutBooks)) {
           labelHandleMemberStatus.Text = "* Some books do not exist";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
-        else if (new Book().IsBooksCheckedOut(this.books, checkedOutBooks)) {
+        else if (Book.IsBooksCheckedOut(this.books, checkedOutBooks)) {
           labelHandleMemberStatus.Text = "* Some books were checked out.";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
         else {
           this.members.Add(new Member(name, dateOfBirth, studentID, className, phoneNumber, email, checkedOutBooks));
-          this.books = new Book().checkOutBooks(this.books, checkedOutBooks, studentID);
+          this.books = Book.CheckOutBooks(this.books, checkedOutBooks, studentID);
 
           this.RefreshDGVMembers();
+          this.RefreshDGVBooks();
+          this.FillMemberTextBoxes();
 
           labelHandleMemberStatus.Text = "* Successfully added new member!";
           labelHandleMemberStatus.ForeColor = Color.Blue;
@@ -217,7 +226,7 @@ namespace librarymanager {
       string bookCategory = textBoxFindBooksByCategory.Text;
       string bookPublicationDate = textBoxFindBooksByPublicationDate.Text;
 
-      List<Book> results = new Book().findBooks(this.books, bookTitle, bookAuthor, bookCategory, bookPublicationDate);
+      List<Book> results = Book.FindBooks(this.books, bookTitle, bookAuthor, bookCategory, bookPublicationDate);
 
       if (results.Count > 0) {
         labelNoResult.Visible = false;
