@@ -85,7 +85,11 @@ namespace librarymanager {
         string email = textBoxMemberEmail.Text;
         string checkedOutBooks = textBoxMemberCheckedOutBooks.Text;
 
-        if (this.members[index - 1].StudentID != studentID && Member.IsMemberExists(this.members, studentID)) {
+        if (name == "" || dateOfBirth == "" || studentID == "" || className == "" || phoneNumber == "" || email == "") {
+          labelHandleMemberStatus.Text = "* Please fill out all fields";
+          labelHandleMemberStatus.ForeColor = Color.Red;
+        }
+        else if (this.members[index - 1].StudentID != studentID && Member.IsMemberExists(this.members, studentID)) {
           labelHandleMemberStatus.Text = "* Member exists";
           labelHandleMemberStatus.ForeColor = Color.Red;
         }
