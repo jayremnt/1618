@@ -10,16 +10,7 @@ namespace librarymanager {
     }
 
     private void Form1_Load(object sender, EventArgs e) {
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "1"));
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "2"));
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "3"));
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "4"));
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "5"));
-      this.books.Add(new Book("Toi thay hoa vang tren co xanh", "Nguyen Nhat Anh", "18/9/2019", "truyen hay", "6"));
-      this.members.Add(new Member("Bao", "20/06/2003", "GCH210135", "GCH1006", "545342", "432423423"));
-
-      this.RefreshDGVBooks();
-      this.RefreshDGVMembers();
+      // init form
     }
 
     private void dataGridViewBooks_CellContentClick(object sender, DataGridViewCellEventArgs e) {
@@ -127,6 +118,9 @@ namespace librarymanager {
         int bookIndex = Int32.Parse(textBoxBookIndex.Text) - 1;
         this.books.RemoveAt(bookIndex);
 
+        labelHandleBookStatus.Text = "* Deleted book";
+        labelHandleBookStatus.ForeColor = Color.Blue;
+
         this.RefreshDGVBooks();
         this.FillBookTextBoxes();
       }
@@ -138,16 +132,23 @@ namespace librarymanager {
 
     private void btnDeleteMember_Click(object sender, EventArgs e) {
       if (textBoxMemberIndex.Text != null && textBoxMemberIndex.Text != "") {
+        // Return books
+        string studentID = textBoxMemberStudentID.Text;
+        this.books = Book.CheckOutBooks(this.books, "", studentID);
+
         int memberIndex = Int32.Parse(textBoxMemberIndex.Text) - 1;
         this.members.RemoveAt(memberIndex);
+
+        labelHandleMemberStatus.Text = "* Deleted member";
+        labelHandleMemberStatus.ForeColor = Color.Blue;
 
         this.RefreshDGVMembers();
         this.RefreshDGVBooks();
         this.FillMemberTextBoxes();
       }
       else {
-        labelHandleBookStatus.Text = "* Can not delete this member";
-        labelHandleBookStatus.ForeColor = Color.Red;
+        labelHandleMemberStatus.Text = "* Can not delete this member";
+        labelHandleMemberStatus.ForeColor = Color.Red;
       }
     }
 

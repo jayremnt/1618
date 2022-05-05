@@ -99,7 +99,6 @@
       this.textBoxMemberName = new System.Windows.Forms.TextBox();
       this.label21 = new System.Windows.Forms.Label();
       this.label22 = new System.Windows.Forms.Label();
-      this.OptionPage = new System.Windows.Forms.TabPage();
       this.tabControl1.SuspendLayout();
       this.findBookPage.SuspendLayout();
       this.groupBox1.SuspendLayout();
@@ -133,7 +132,6 @@
       // 
       this.tabControl1.Controls.Add(this.findBookPage);
       this.tabControl1.Controls.Add(this.ManagePage);
-      this.tabControl1.Controls.Add(this.OptionPage);
       this.tabControl1.Location = new System.Drawing.Point(0, 0);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
@@ -835,16 +833,6 @@
       this.label22.TabIndex = 23;
       this.label22.Text = "Member Info";
       // 
-      // OptionPage
-      // 
-      this.OptionPage.Location = new System.Drawing.Point(4, 24);
-      this.OptionPage.Name = "OptionPage";
-      this.OptionPage.Padding = new System.Windows.Forms.Padding(3);
-      this.OptionPage.Size = new System.Drawing.Size(986, 560);
-      this.OptionPage.TabIndex = 2;
-      this.OptionPage.Text = "Options";
-      this.OptionPage.UseVisualStyleBackColor = true;
-      // 
       // LibraryManager
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -895,7 +883,6 @@
     private TabControl tabControl1;
     private TabPage findBookPage;
     private TabPage ManagePage;
-    private TabPage OptionPage;
     private GroupBox groupBox1;
     private SplitContainer splitContainer1;
     private Label label1;
@@ -934,7 +921,6 @@
     private TextBox textBoxMemberCheckedOutBooks;
     private Label label24;
     private Button btnFindBooks;
-    private Label label28;
     private Label labelNoResult;
     private TabControl tabControl3;
     private TabPage tabPage3;

@@ -110,7 +110,7 @@ namespace Jayremnt.Winform {
           books[i].Borrower = "None";
         }
         
-        // Check out book
+        // Check out books
         for (int j = 0; j < checkedOutBooks.Length; j++) {
           if (checkedOutBooks[j].ToLower() == books[i].Code.ToLower()) {
             books[i].Status = "Checked out";
